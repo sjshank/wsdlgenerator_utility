@@ -1,0 +1,24 @@
+[2016-04-01 17:59:19.245] [ERROR] app - unexpected error occur  [ReferenceError: loadAddress is not defined]
+ReferenceError: loadAddress is not defined
+    at C:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\app.js:33:5
+    at Layer.handle [as handle_request] (C:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (C:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (C:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:330:12)
+    at next (C:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:271:10)
+    at C:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\app.js:28:5
+    at Layer.handle [as handle_request] (C:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+[2016-04-01 20:40:43.427] [ERROR] createController - Error occurred while creating wsdl [TypeError: Converting circular structure to JSON]
+TypeError: Converting circular structure to JSON
+    at Object.stringify (native)
+    at ServerResponse.json (C:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\response.js:242:19)
+    at Object.exports.createWsdl (C:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:48:33)
+    at C:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\config\router.js:11:20
+    at Layer.handle [as handle_request] (C:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (C:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (C:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:330:12)

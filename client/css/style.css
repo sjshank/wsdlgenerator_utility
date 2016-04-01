@@ -1,0 +1,53 @@
+body {
+  background: #eeeeee !important;
+  background-color: #eeeeee !important;
+  color: #5e5e5e;
+}
+h1 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #5e5e5e;
+}
+.heading {
+  font-size: 44px;
+}
+.float-left {
+  float: left;
+}
+.display-block {
+  display: block;
+}
+.border-lightBlack {
+  border: 1px solid #5e5e5e;
+}
+.warningDiv {
+  width: 66%;
+}
+.generate-container {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.sectionDiv {
+  background-color: #f8f8f8;
+  border: 1px solid #5e5e5e;
+  border-radius: 4px;
+}
+.header-section {
+  color: #5e5e5e;
+  background-color: transaprent;
+  padding: 20px;
+}
+.errorTxt {
+  color: red;
+  font-size: 12px;
+}
+.input-group {
+  width: 100% !important;
+}
+.form-div {
+  margin-left: 32%;
+}
+.textalign-center {
+  text-align: center;
+}

@@ -1,0 +1,42 @@
+<div  class="container generate-container">
+
+    <app-header selected="generate"></app-header>
+
+    <!-- To display error message -->
+    <div ng-cloak ng-if="me.hasError">
+        <ng-include src="'views/error.tpl.html'"></ng-include>
+    </div>
+    
+
+    <div class="row form-div" >
+        <form role="form" ng-submit="generateWsdl()">
+
+            <div class="col-lg-8">
+            <h2 ><strong>Generate WSDL</strong></h2>
+                <div class="form-group">
+                    <label for="InputName">Enter Name</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control"  name="InputName" id="InputName" placeholder="Enter Name" >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="InputEmail">Enter Email</label>
+                    <div class="input-group">
+                        <input type="email" class="form-control"  id="InputEmailFirst" name="InputEmail" placeholder="Enter Email" >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="InputEmail">Confirm Email</label>
+                    <div class="input-group">
+                        <input type="email" class="form-control"  id="InputEmailSecond" name="InputEmail" placeholder="Confirm Email" >
+                    </div>
+                </div>
+                <div class="textalign-center">
+                    <input type="submit" name="generate" id="generate" value="Generate" class="btn btn-primary">
+                </div>
+            </div>
+        </form>
+    </div>
+
+   
+</div>
