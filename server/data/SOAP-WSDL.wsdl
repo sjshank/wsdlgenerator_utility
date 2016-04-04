@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wsdl:definitions name="http://www.intuit.com/sb/cdm/qbo" targetNamespace="http://www.intuit.com/sb/cdm/qbo" xmlns:wsdl="http://www.intuit.com/sb/cdm/qbo" xmlns:soap="http://www.intuit.com/sb/cdm/qbo" xmlns:tns="http://www.intuit.com/sb/cdm/v2" xmlns:bons2="http://www.intuit.com/sb/cdm/v2" xmlns:xsd="http://www.intuit.com/sb/cdm/v2">
+  <TypeOf>Person</TypeOf>
+  <Name>John Doe</Name>
+  <Address>
+    <Line1>Park Avenue</Line1>
+    <City>Woodland Hills</City>
+    <CountrySubDivisionCode>CA</CountrySubDivisionCode>
+    <PostalCode>91367</PostalCode>
+  </Address>
+  <Phone>
+    <DeviceType>Mobile</DeviceType>
+    <FreeFormNumber>(770) 349-1200</FreeFormNumber>
+  </Phone>
+  <Phone>
+    <Fax>Mobile</Fax>
+    <FreeFormNumber>(770) 349-1300</FreeFormNumber>
+  </Phone>
+  <WebSite>
+    <URI>http://www.digitalinsight.mint.com</URI>
+  </WebSite>
+  <Email>
+    <Address>john_doe@digitalinsight.mint.com</Address>
+  </Email>
+  <GivenName>John</GivenName>
+  <MiddleName>J</MiddleName>
+  <FamilyName>Doe</FamilyName>
+</wsdl:definitions>

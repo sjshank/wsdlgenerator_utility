@@ -32,8 +32,10 @@
     "grunt-contrib-less": "~0.11.0",
     "grunt-nodemon": "~0.3.0",
     "jsonfile": "^2.2.3",
+    "jstoxml": "^0.2.3",
     "less": "^2.5.3",
     "log4js": "^0.6.33",
+    "xml2js": "^0.4.16",
     "xmlbuilder": "^8.2.0"
   }
 }
