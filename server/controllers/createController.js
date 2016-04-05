@@ -5,76 +5,37 @@
 
 const log4js = require('log4js'),
       Promise = require('bluebird'),
-      builder = Promise.promisifyAll(require("xmlbuilder")),
-      path = require('path'),
       log = log4js.getLogger("createController"),
-      file = './server/data/SOAP-WSDL.wsdl',
       fs = require('fs'),
+      constants = require('../utils/appConstants'),
+      xmlDocHelper = require('../helpers/xmlDocHelper'),
       xml2js = Promise.promisifyAll(require('xml2js')),
-      parseString = xml2js.parseStringAsync,
-      jstoxml = require('jstoxml');
+      parseString = xml2js.parseStringAsync;
       
 //generate wsdl
 exports.createWsdl = function(reqObject, resObject) {
-    log.debug("Inside createWsdl methond");
+    log.debug("******Create WSDL Starts******");
     try{
-        var result = "";
-        var buildXML = function (){
-                return builder.create('wsdl:definitions', {'version': '1.0', 'encoding': 'UTF-8'})
-                    .att("name","http://www.intuit.com/sb/cdm/qbo")
-                    .att("targetNamespace","http://www.intuit.com/sb/cdm/qbo")
-                    .att("xmlns:wsdl","http://www.intuit.com/sb/cdm/qbo")
-                    .att("xmlns:soap","http://www.intuit.com/sb/cdm/qbo")
-                    .att("xmlns:tns","http://www.intuit.com/sb/cdm/v2")
-                    .att("xmlns:bons2","http://www.intuit.com/sb/cdm/v2")
-                    .att("xmlns:xsd","http://www.intuit.com/sb/cdm/v2")
-                        .ele("TypeOf","Person").up()
-                        .ele("Name","John Doe").up()
-                        .ele("Address")
-                            .ele("Line1","Park Avenue").up()
-                            .ele("City","Woodland Hills").up()
-                            .ele("CountrySubDivisionCode","CA").up()
-                            .ele("PostalCode","91367").up()
-                            .up()
-                        .ele("Phone")
-                            .ele("DeviceType","Mobile").up()
-                            .ele("FreeFormNumber","(770) 349-1200").up()
-                            .up()
-                        .ele("Phone")
-                            .ele("Fax","Mobile").up()
-                            .ele("FreeFormNumber","(770) 349-1300").up()
-                            .up()
-                        .ele("WebSite")
-                            .ele("URI","http://www.digitalinsight.mint.com").up()
-                            .up()
-                        .ele("Email")
-                            .ele("Address","john_doe@digitalinsight.mint.com").up()
-                            .up()
-                        .ele("GivenName","John").up()
-                        .ele("MiddleName","J").up()
-                        .ele("FamilyName","Doe").up();
-        };
-                
                 var getWSDLFile = function(){
-                      result  = buildXML();
+                      var result  = xmlDocHelper.buildXMLDoc(reqObject);
                       return new Promise(function(resolve, reject){
-                          parseString(result.toString())
+                          parseString(result)
                             .then(function(jsonObj){
                                 var build = new xml2js.Builder();
                                 return build.buildObject(jsonObj);
                             })
                             .then(function(xmlContent){
-                                    return fs.writeFile(file, xmlContent);        
+                                return fs.writeFile(constants.WSDL_FILE_LOC, xmlContent);        
                             })
                             .then(function(f){
-                                   return fs.createReadStream(file);     
+                                return fs.createReadStream(constants.WSDL_FILE_LOC);     
                             })
                             .then(function(fileStream){
                                 resolve(fileStream);
                             })
                             .catch(function(err){
-                                log.error( err);
-                                resObject.json({errMsg : "Failed to generate WSDL. Please try after sometime."});
+                                log.error("Error while sending filestream ", err);
+                                resObject.json({errMsg : constants.WSDL_GENERATE_FAILED});
                             });
                       });  
                 };
@@ -82,19 +43,18 @@ exports.createWsdl = function(reqObject, resObject) {
                  (function(){
                             getWSDLFile()
                                 .then(function(fileStream){
-                                    const filename = path.basename(file);
-                                    resObject.setHeader('Content-disposition', 'attachment; filename=' + filename);
-                                    resObject.setHeader('Content-type', "text/xml");  
+                                    resObject.setHeader('Content-disposition', 'attachment; filename=' + constants.FILENAME);
+                                    resObject.setHeader('Content-type', "text/wsdl");  
                                     fileStream.pipe(resObject);
                                 })
                                 .catch(function(err){
-                                    log.error( err);
-                                    resObject.json({errMsg : "Failed to generate WSDL. Please try after sometime."});
+                                    log.error("Error while sending filestream ", err);
+                                    resObject.json({errMsg : constants.WSDL_GENERATE_FAILED});
                                 });
                  })();
    
     }catch(err){
         log.error("Error occurred while creating wsdl", err);
-        resObject.json({errMsg : "Something went wrong in backend. We are working hard to resolve."});
+        resObject.json({errMsg : constants.SERVICE_ERROR});
     }
 };

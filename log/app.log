@@ -1,1 +1,370 @@
 [2016-04-04 20:14:42.375] [DEBUG] createController - Inside createWsdl methond
+[2016-04-05 19:25:06.183] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 19:25:06.185] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 19:25:32.021] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 19:25:32.024] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 19:27:24.644] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 19:27:27.174] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 19:29:38.030] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 19:29:38.580] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 19:31:20.481] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 19:31:21.455] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 19:33:12.431] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 19:33:12.605] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 19:37:15.369] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 19:37:16.308] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 19:38:49.101] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 19:38:49.685] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 19:43:40.550] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 19:44:05.380] [ERROR] createController - Error occurred while creating wsdl [TypeError: xmlDocHelper.getWSDLTypesEle is not a function]
+TypeError: xmlDocHelper.getWSDLTypesEle is not a function
+    at exports.createWsdl.getWSDLFile (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:20:34)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:45:29
+    at Object.exports.createWsdl (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:55:20)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\config\router.js:11:20
+    at Layer.handle [as handle_request] (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+    at next (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:330:12)
+    at next (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:271:10)
+    at Function.handle (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:176:3)
+    at router (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:312:13)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:280:7
+[2016-04-05 20:17:41.228] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 20:17:42.159] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 20:17:50.472] [ERROR] createController - Error occurred while creating wsdl [Error: The root node has no parent. Use doc() if you need to get the document object.]
+Error: The root node has no parent. Use doc() if you need to get the document object.
+    at XMLElement.module.exports.XMLNode.up (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:292:15)
+    at Object.exports.buildXMLDoc (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\helpers\xmlDocHelper.js:21:60)
+    at exports.createWsdl.getWSDLFile (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:20:50)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:44:29
+    at Object.exports.createWsdl (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:54:20)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\config\router.js:11:20
+    at Layer.handle [as handle_request] (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+    at next (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:330:12)
+    at next (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:271:10)
+    at Function.handle (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:176:3)
+    at router (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+[2016-04-05 20:19:09.202] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 20:19:09.203] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 20:19:59.428] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 20:19:59.429] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 20:20:19.961] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 20:20:19.961] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 20:20:31.850] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 20:20:31.851] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 20:21:51.148] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 20:21:51.149] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 20:22:32.923] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 20:22:32.923] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 20:24:18.362] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 20:24:18.363] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 20:24:29.430] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 20:24:29.430] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 20:24:58.615] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 20:24:58.616] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 20:25:04.811] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 20:25:04.812] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 20:25:05.640] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 20:25:05.640] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 20:25:06.096] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 20:25:06.097] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 20:25:06.250] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 20:25:06.250] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 20:25:06.392] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 20:25:06.392] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 20:25:06.445] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 20:25:06.446] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:05:55.427] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:05:55.427] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:05:56.305] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:05:56.305] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:05:56.758] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:05:56.758] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:07:07.068] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:07:07.068] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:07:14.872] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:07:14.873] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:07:16.004] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:07:16.004] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:07:16.601] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:07:16.601] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:07:37.457] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:07:37.457] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:08:11.982] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:08:11.984] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:08:12.474] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:08:12.474] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:08:12.988] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:08:12.988] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:14:50.966] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:14:50.968] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:14:51.505] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:14:51.505] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:14:51.965] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:14:51.965] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:15:54.784] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:15:54.784] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:15:55.263] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:15:55.263] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:15:55.669] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:15:55.669] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:17:49.522] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:17:49.523] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:17:57.277] [ERROR] createController - Error occurred while creating wsdl [TypeError: Cannot read property 'indexOf' of undefined]
+TypeError: Cannot read property 'indexOf' of undefined
+    at XMLElement.module.exports.XMLNode.element (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:89:84)
+    at XMLElement.module.exports.XMLNode.ele (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:355:19)
+    at getWsdlTypesEle (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\helpers\xmlDocHelper.js:41:25)
+    at Object.exports.buildXMLDoc (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\helpers\xmlDocHelper.js:23:21)
+    at exports.createWsdl.getWSDLFile (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:20:50)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:44:29
+    at Object.exports.createWsdl (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:54:20)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\config\router.js:11:20
+    at Layer.handle [as handle_request] (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+    at next (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:330:12)
+    at next (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:271:10)
+    at Function.handle (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:176:3)
+[2016-04-05 22:18:23.128] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:18:23.129] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:18:58.787] [ERROR] createController - Error occurred while creating wsdl [TypeError: Cannot read property 'indexOf' of undefined]
+TypeError: Cannot read property 'indexOf' of undefined
+    at XMLElement.module.exports.XMLNode.element (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:89:84)
+    at XMLElement.module.exports.XMLNode.ele (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:355:19)
+    at getWsdlTypesEle (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\helpers\xmlDocHelper.js:41:25)
+    at Object.exports.buildXMLDoc (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\helpers\xmlDocHelper.js:23:21)
+    at exports.createWsdl.getWSDLFile (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:20:50)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:44:29
+    at Object.exports.createWsdl (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:54:20)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\config\router.js:11:20
+    at Layer.handle [as handle_request] (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+    at next (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:330:12)
+    at next (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:271:10)
+    at Function.handle (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:176:3)
+[2016-04-05 22:19:13.951] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:19:13.952] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:19:17.714] [ERROR] createController - Error occurred while creating wsdl [TypeError: Cannot read property 'indexOf' of undefined]
+TypeError: Cannot read property 'indexOf' of undefined
+    at XMLElement.module.exports.XMLNode.element (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:89:84)
+    at XMLElement.module.exports.XMLNode.ele (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:355:19)
+    at getWsdlTypesEle (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\helpers\xmlDocHelper.js:41:25)
+    at Object.exports.buildXMLDoc (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\helpers\xmlDocHelper.js:23:21)
+    at exports.createWsdl.getWSDLFile (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:20:50)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:44:29
+    at Object.exports.createWsdl (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:54:20)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\config\router.js:11:20
+    at Layer.handle [as handle_request] (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+    at next (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:330:12)
+    at next (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:271:10)
+    at Function.handle (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:176:3)
+[2016-04-05 22:20:38.322] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:20:38.323] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:20:46.298] [ERROR] createController - Error occurred while creating wsdl [TypeError: Cannot read property 'indexOf' of undefined]
+TypeError: Cannot read property 'indexOf' of undefined
+    at XMLElement.module.exports.XMLNode.element (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:89:84)
+    at XMLElement.module.exports.XMLNode.ele (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:355:19)
+    at getWsdlTypesEle (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\helpers\xmlDocHelper.js:41:25)
+    at Object.exports.buildXMLDoc (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\helpers\xmlDocHelper.js:23:21)
+    at exports.createWsdl.getWSDLFile (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:20:50)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:44:29
+    at Object.exports.createWsdl (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:54:20)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\config\router.js:11:20
+    at Layer.handle [as handle_request] (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+    at next (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:330:12)
+    at next (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:271:10)
+    at Function.handle (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:176:3)
+[2016-04-05 22:22:35.116] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:22:35.117] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:22:41.836] [ERROR] createController - Error occurred while creating wsdl [RangeError: Maximum call stack size exceeded]
+RangeError: Maximum call stack size exceeded
+    at String.match (native)
+    at XMLStringifier.module.exports.XMLStringifier.assertLegalChar (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLStringifier.js:151:17)
+    at XMLStringifier.bind [as assertLegalChar] (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLStringifier.js:4:59)
+    at XMLStringifier.module.exports.XMLStringifier.eleName (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLStringifier.js:28:19)
+    at new XMLElement (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLElement.js:21:34)
+    at XMLElement.module.exports.XMLNode.node (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:153:15)
+    at XMLElement.module.exports.XMLNode.element (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:100:28)
+    at XMLElement.module.exports.XMLNode.element (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:82:30)
+    at XMLElement.module.exports.XMLNode.element (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:83:23)
+    at XMLElement.module.exports.XMLNode.element (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:79:32)
+    at XMLElement.module.exports.XMLNode.element (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:83:23)
+    at XMLElement.module.exports.XMLNode.element (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:83:23)
+    at XMLElement.module.exports.XMLNode.element (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:79:32)
+    at XMLElement.module.exports.XMLNode.element (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:83:23)
+    at XMLElement.module.exports.XMLNode.element (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:83:23)
+    at XMLElement.module.exports.XMLNode.element (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:79:32)
+[2016-04-05 22:23:38.941] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:23:38.942] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:23:45.491] [ERROR] createController - Error occurred while creating wsdl [RangeError: Maximum call stack size exceeded]
+RangeError: Maximum call stack size exceeded
+    at String.match (native)
+    at XMLStringifier.module.exports.XMLStringifier.assertLegalChar (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLStringifier.js:151:17)
+    at XMLStringifier.bind [as assertLegalChar] (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLStringifier.js:4:59)
+    at XMLStringifier.module.exports.XMLStringifier.eleName (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLStringifier.js:28:19)
+    at new XMLElement (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLElement.js:21:34)
+    at XMLElement.module.exports.XMLNode.node (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:153:15)
+    at XMLElement.module.exports.XMLNode.element (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:100:28)
+    at XMLElement.module.exports.XMLNode.element (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:82:30)
+    at XMLElement.module.exports.XMLNode.element (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:83:23)
+    at XMLElement.module.exports.XMLNode.element (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:79:32)
+    at XMLElement.module.exports.XMLNode.element (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:83:23)
+    at XMLElement.module.exports.XMLNode.element (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:83:23)
+    at XMLElement.module.exports.XMLNode.element (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:79:32)
+    at XMLElement.module.exports.XMLNode.element (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:83:23)
+    at XMLElement.module.exports.XMLNode.element (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:83:23)
+    at XMLElement.module.exports.XMLNode.element (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:79:32)
+[2016-04-05 22:25:04.181] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:25:04.182] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:36:47.807] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:36:47.808] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:36:53.708] [ERROR] createController - Error occurred while creating wsdl [Error: Already at the last node]
+Error: Already at the last node
+    at XMLElement.module.exports.XMLNode.next (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:340:15)
+    at getWsdlTypesEle (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\helpers\xmlDocHelper.js:45:18)
+    at Object.exports.buildXMLDoc (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\helpers\xmlDocHelper.js:23:21)
+    at exports.createWsdl.getWSDLFile (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:20:50)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:44:29
+    at Object.exports.createWsdl (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:54:20)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\config\router.js:11:20
+    at Layer.handle [as handle_request] (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+    at next (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:330:12)
+    at next (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:271:10)
+    at Function.handle (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:176:3)
+    at router (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:46:12)
+[2016-04-05 22:37:12.654] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:37:12.655] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:37:16.356] [ERROR] createController - Error occurred while creating wsdl [Error: Already at the last node]
+Error: Already at the last node
+    at XMLElement.module.exports.XMLNode.next (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:340:15)
+    at getWsdlTypesEle (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\helpers\xmlDocHelper.js:44:16)
+    at Object.exports.buildXMLDoc (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\helpers\xmlDocHelper.js:23:21)
+    at exports.createWsdl.getWSDLFile (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:20:50)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:44:29
+    at Object.exports.createWsdl (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:54:20)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\config\router.js:11:20
+    at Layer.handle [as handle_request] (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+    at next (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:330:12)
+    at next (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:271:10)
+    at Function.handle (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:176:3)
+    at router (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:46:12)
+[2016-04-05 22:37:58.057] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:37:58.058] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:38:01.397] [ERROR] createController - Error occurred while creating wsdl [Error: Already at the last node]
+Error: Already at the last node
+    at XMLElement.module.exports.XMLNode.next (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\xmlbuilder\lib\XMLNode.js:340:15)
+    at getWsdlTypesEle (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\helpers\xmlDocHelper.js:44:48)
+    at Object.exports.buildXMLDoc (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\helpers\xmlDocHelper.js:23:21)
+    at exports.createWsdl.getWSDLFile (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:20:50)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:44:29
+    at Object.exports.createWsdl (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:54:20)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\config\router.js:11:20
+    at Layer.handle [as handle_request] (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+    at next (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:330:12)
+    at next (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:271:10)
+    at Function.handle (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:176:3)
+    at router (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:46:12)
+[2016-04-05 22:40:54.841] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:40:54.843] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:41:02.068] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:41:02.068] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:41:04.751] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:41:04.751] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:41:07.743] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:41:07.743] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:41:15.392] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:41:15.392] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:41:15.896] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:41:15.896] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:44:53.302] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:44:53.303] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:44:54.033] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:44:54.033] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:44:54.505] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:44:54.506] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:46:18.287] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:46:18.289] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:46:18.801] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:46:18.801] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:46:19.178] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:46:19.178] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:46:46.829] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:46:46.830] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:46:47.261] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:46:47.261] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:46:48.391] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:46:48.391] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:46:49.019] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:46:49.020] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:47:03.965] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:47:03.966] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:47:04.617] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:47:04.617] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:47:05.043] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:47:05.043] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:48:10.045] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:48:10.046] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:48:10.496] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:48:10.496] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:48:10.917] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:48:10.918] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:49:37.999] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:49:37.999] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:49:38.568] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:49:38.568] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:49:39.018] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:49:39.018] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:50:53.665] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:50:53.666] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:50:54.034] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:50:54.034] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:50:54.445] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:50:54.445] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:52:29.308] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:52:29.309] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:52:30.197] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:52:30.198] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:52:30.579] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:52:30.579] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:56:55.301] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:56:55.301] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:56:55.668] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:56:55.668] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-05 22:56:56.042] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-05 22:56:56.042] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
