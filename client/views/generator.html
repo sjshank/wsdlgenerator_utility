@@ -14,25 +14,23 @@
             <div class="col-lg-8">
             <h2 ><strong>Generate WSDL</strong></h2>
                 <div class="form-group">
-                    <label for="InputName">Enter Name</label>
+                    <label for="serviceName">Enter Web Service Name</label>
                     <div class="input-group">
-                        <input type="text" class="form-control"  name="InputName" id="InputName" placeholder="Enter Name" >
+                        <input type="text" class="form-control"  name="serviceName" ng-model= "me.wsdlObject.serviceName" id="serviceName" placeholder="Enter Service Name" >
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="InputEmail">Enter Email</label>
+                    <label for="targetNamespace">Target Namespace</label>
                     <div class="input-group">
-                        <input type="email" class="form-control"  id="InputEmailFirst" name="InputEmail" placeholder="Enter Email" >
+                        <input type="text" class="form-control" readonly  id="targetNamespace" name="targetNamespace" ng-model = "me.wsdlObject.targetNamespace">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="InputEmail">Confirm Email</label>
-                    <div class="input-group">
-                        <input type="email" class="form-control"  id="InputEmailSecond" name="InputEmail" placeholder="Confirm Email" >
-                    </div>
+                
+                <div class="float-left">
+                    <input type="button"  id="requestEle" value="Add Request Element" class="btn btn-primary">
                 </div>
-                <div class="textalign-center">
-                    <input type="submit" name="generate" id="generate" value="Generate" class="btn btn-primary">
+                <div class="float-left">
+                    <input type="button"  id="responseEle" value="Add Response Element" class="btn btn-primary">
                 </div>
             </div>
         </form>
