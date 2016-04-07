@@ -28,7 +28,7 @@ exports.createWsdl = function(reqObject, resObject) {
                                 return fs.writeFile(constants.WSDL_FILE_LOC, xmlContent);        
                             })
                             .then(function(f){
-                                return fs.createReadStream(constants.WSDL_FILE_LOC);     
+                                return fs.FileReadStream(constants.WSDL_FILE_LOC);     
                             })
                             .then(function(fileStream){
                                 resolve(fileStream);

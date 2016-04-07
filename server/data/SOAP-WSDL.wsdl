@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <wsdl:definitions name="serviceName" targetNamespace="http://service.lfg.com/serviceName/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.lfg.com/serviceName/" xmlns:bons2="http://service.lfg.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <wsdl:types>
-    <xsd:schema targetNamespace="http://service.lfg.com/SampleBusinessService/"/>
-    <xsd:element name="requestElementName">
-      <xsd:complexType>
-        <xsd:sequence>
-          <xsd:element name="variableName" type="xsd:Type"/>
-          <xsd:element name="variableName" type="xsd:Type"/>
-        </xsd:sequence>
-      </xsd:complexType>
-    </xsd:element>
+    <xsd:schema targetNamespace="http://service.lfg.com/SampleBusinessService/">
+      <xsd:element name="requestElementName">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="variableName" type="xsd:Type"/>
+            <xsd:element name="variableName" type="xsd:Type"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="responseElementName">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="variableName" type="xsd:Type"/>
+            <xsd:element name="variableName" type="xsd:Type"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
   </wsdl:types>
   <wsdl:message name="requestMessageName">
     <wsdl:part element="tns:requestElementName" name="parameters"/>
@@ -22,5 +31,26 @@
       <wsdl:input name="tns:requestMessageName"/>
       <wsdl:output name="tns:responseMessageName"/>
     </wsdl:operation>
+    <wsdl:operation name="methodName">
+      <wsdl:input name="tns:requestMessageName"/>
+      <wsdl:output name="tns:responseMessageName"/>
+    </wsdl:operation>
   </wsdl:portType>
+  <wsdl:binding name="serviceNameSOAP" type="tns:serviceName">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="methodName">
+      <soap:operation soapAction="http://service.lfg.com/serviceName/methodName"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="serviceName">
+    <wsdl:port binding="tns:serviceNameSOAP" name="serviceNameSOAP">
+      <soap:address location="http://localhost:9080/service-root-context/serviceName"/>
+    </wsdl:port>
+  </wsdl:service>
 </wsdl:definitions>

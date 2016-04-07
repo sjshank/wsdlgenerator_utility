@@ -9,7 +9,7 @@ var appConstants = {
     XMLNS_TNS : 'http://service.lfg.com/',
     XMLNS_BONS2 : 'http://service.lfg.com/',
     XMLNS_XSD : 'http://www.w3.org/2001/XMLSchema',
-    TRANSPORT : 'http://schemas.xmlsoap.org/soap/http',
+    TRANSPORT_URL : 'http://schemas.xmlsoap.org/soap/http',
     WSDL_TYPES : 'wsdl:types',
     XSD_SCHEMA : 'xsd:schema',
     XSD_ELEMENT : 'xsd:element',
@@ -24,9 +24,11 @@ var appConstants = {
     WSDL_BINDING : 'wsdl:binding',
     WSDL_PORT : 'wsdl:port',
     WSDL_SERVICE : 'wsdl:service',
+    SOAP_BINDING : 'soap:binding',
     SOAP_ADDRESS : 'soap:address',
     SOAP_OPERATION : 'soap:operation',
-    SOAP_BODY : 'soap:body'
+    SOAP_BODY : 'soap:body',
+    LOCATION_URL : 'http://localhost:9080/'
 }
 
 module.exports = appConstants;
