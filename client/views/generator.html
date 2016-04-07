@@ -13,24 +13,39 @@
 
             <div class="col-lg-8">
             <h2 ><strong>Generate WSDL</strong></h2>
-                <div class="form-group">
-                    <label for="serviceName">Enter Web Service Name</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control"  name="serviceName" ng-model= "me.wsdlObject.serviceName" id="serviceName" placeholder="Enter Service Name" >
-                    </div>
+            <br>
+                <div class="form-control form-input-div">
+                    <label class="form-input-text" for="serviceName">Web Service Name</label>
+                    <input type="text" class="form-input-box form-control"  name="serviceName" ng-model= "me.wsdlObject.serviceName" id="serviceName" placeholder="Enter Service Name" >
                 </div>
-                <div class="form-group">
-                    <label for="targetNamespace">Target Namespace</label>
+                <div class="form-control form-input-div">
+                    <label class="form-input-text" for="targetNamespace">Target Namespace</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" readonly  id="targetNamespace" name="targetNamespace" ng-model = "me.wsdlObject.targetNamespace">
+                        <input type="text" class="form-input-box form-control readonlyClass" readonly  id="targetNamespace" name="targetNamespace" ng-model = "me.wsdlObject.targetNamespace">
                     </div>
                 </div>
                 
-                <div class="float-left">
+                <br>
+                <div class="float-left margin-left-10perc">
                     <input type="button"  id="requestEle" value="Add Request Element" class="btn btn-primary">
                 </div>
-                <div class="float-left">
+                <div class="float-left margin-left-10perc">
                     <input type="button"  id="responseEle" value="Add Response Element" class="btn btn-primary">
+                </div>
+                <div class="clear-both"></div>
+                
+                <br>
+                <div class="float-left margin-left-10perc">
+                    <input type="button"  id="requestEle" value="Add Request Message" class="btn btn-primary">
+                </div>
+                <div class="float-left margin-left-10perc">
+                    <input type="button"  id="responseEle" value="Add Response Message" class="btn btn-primary">
+                </div>
+                <div class="clear-both"></div>
+                
+                <br>
+                <div class="textalign-center">
+                    <input type="button"  id="generate" value="Generate" class="btn btn-primary">
                 </div>
             </div>
         </form>
