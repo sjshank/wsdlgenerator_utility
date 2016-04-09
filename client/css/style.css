@@ -15,6 +15,9 @@ h1 {
 .float-left {
   float: left;
 }
+.float-right {
+  float: right;
+}
 .clear-both {
   clear: both;
 }
@@ -101,4 +104,20 @@ h1 {
 }
 .margin-left-10perc {
   margin-left: 10%;
+}
+.button-cls {
+  width: 170px;
+}
+.delete-icon {
+  margin-left: 8px;
+}
+.element-box {
+  width: 42%;
+}
+.data-type-options {
+  margin-left: 8px;
+  width: 32%;
+}
+.btn-icon {
+  padding: 6px 12px !important;
 }

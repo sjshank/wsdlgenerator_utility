@@ -7,6 +7,9 @@
         <ng-include src="'views/error.tpl.html'"></ng-include>
     </div>
     
+    <div ng-hide="me.showDialog">
+        <ng-include src="'views/dialog.tpl.html'"></ng-include>
+    </div>
 
     <div class="row form-div" >
         <form role="form" ng-submit="generateWsdl()">
@@ -27,25 +30,25 @@
                 
                 <br>
                 <div class="float-left margin-left-10perc">
-                    <input type="button"  id="requestEle" value="Add Request Element" class="btn btn-primary">
+                    <input type="button" ng-click="addRequestElement()"  id="requestEle" ng-disabled="me.disableReqEle" value="Add Request Element" class="btn btn-primary button-cls">
                 </div>
                 <div class="float-left margin-left-10perc">
-                    <input type="button"  id="responseEle" value="Add Response Element" class="btn btn-primary">
+                    <input type="button" id="responseEle" ng-disabled="me.disableResEle" value="Add Response Element" class="btn btn-primary button-cls">
                 </div>
                 <div class="clear-both"></div>
                 
                 <br>
                 <div class="float-left margin-left-10perc">
-                    <input type="button"  id="requestEle" value="Add Request Message" class="btn btn-primary">
+                    <input type="button"  id="requestEle" ng-disabled="me.disableReqMsg" value="Add Request Message" class="btn btn-primary button-cls">
                 </div>
                 <div class="float-left margin-left-10perc">
-                    <input type="button"  id="responseEle" value="Add Response Message" class="btn btn-primary">
+                    <input type="button"  id="responseEle" ng-disabled="me.disableResMsg" value="Add Response Message" class="btn btn-primary button-cls">
                 </div>
                 <div class="clear-both"></div>
                 
                 <br>
                 <div class="textalign-center">
-                    <input type="button"  id="generate" value="Generate" class="btn btn-primary">
+                    <input type="submit" style="margin-right: 5px;" ng-disabled="me.disableGenerate" id="generate" value="Generate" class="btn btn-primary">
                 </div>
             </div>
         </form>

@@ -1,0 +1,26 @@
+<script type="text/ng-template" id="dialogTemplId">
+<div>
+    <h2>Add Request Elements</h2>
+    <br>
+    <div class="form-control form-input-div">
+            <label class="form-input-text" for="reqEleName">Request Element Name</label>
+            <input type="text" class="form-input-box form-control"  name="reqEleName" ng-model= "me.wsdlObject.requestElement.name" id="reqEleName" placeholder="Enter Name" >
+    </div>
+    <div>
+        <label style="margin-top:4px;" for="request">Elements</label>
+        <button type="button" ng-click="addElement()" ng-disabled="me.elementLimit" class="delete-Btn btn  btn-primary float-right">Add Element</button>
+    </div>
+        <div  ng-repeat="element in me.wsdlObject.requestElement.elements">
+            <br>
+            <input type="text" class="element-box form-control float-left" id="{{element.input}}"  placeholder="Enter Input" ng-model="element.input" required>
+            <select class="float-left form-control data-type-options" ng-model="element.dataType" ng-options="v for v in me.dataTypes"></select>
+            <button type="button" ng-click="removeElement(element)" class="delete-icon btn btn-sm btn-danger">
+                <i class="glyphicon glyphicon-remove">
+                </i>
+            </button>
+            
+        </div>
+        <br>
+    <button type="button"  ng-hide="me.wsdlObject.requestElement.elements.length < 1" class="btn btn-primary">Add</button>
+</div>
+</script>
