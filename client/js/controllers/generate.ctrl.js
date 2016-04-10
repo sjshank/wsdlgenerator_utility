@@ -2,8 +2,8 @@
 
 angular.module('wsdlApp')
     
-    .controller('generateCtrl', ['$scope',  '$log', 'wsdlAPI', 'appConstants', 'ngDialog', 'wsdlDataService',
-                     function($scope, $log, wsdlAPI, appConstants, ngDialog, wsdlDataService) {
+    .controller('generateCtrl', ['$scope', '$rootScope', '$log', 'wsdlAPI', 'appConstants', 'ngDialog', 'wsdlDataService', '$controller',
+                     function($scope, $rootScope, $log, wsdlAPI, appConstants, ngDialog, wsdlDataService, $controller) {
        var me = this;
        wsdlDataService.reset();
        me.hasError = false;
@@ -15,6 +15,10 @@ angular.module('wsdlApp')
        me.disableResMsg = true;
        me.disableGenerate = true;
        me.showDialog = false;
+       me.showReqEle = false;
+       me.showResEle = false;
+       me.showReqMsg = false;
+       me.showResMsg = false;
        
        
        //watch function for state value to display/hide city text box
@@ -28,78 +32,45 @@ angular.module('wsdlApp')
                }
         });
         
-        $scope.addRequestElement = function () {
+        $scope.addRequestElement = function (me) {
             me.showDialog = true;
+            me.showReqEle = true;
             ngDialog.open(
                 {
-                   template: 'dialogTemplId',
-                   className: 'ngdialog-theme-default',
-                   scope: $scope,
-                   overlay: true,
-                   closeByNavigation: true,
-                   preCloseCallback: function(value) {
-                        
-                   }
-                });
+                template: 'dialogTemplId',
+                className: 'ngdialog-theme-default',
+                scope: $scope,
+                overlay: true,
+                controller: $controller('requestElementCtrl', {
+                    $scope: $scope,
+                    wsdl: me
+                }),
+                closeByNavigation: true,
+                preCloseCallback: function(value) {
+                }
+            });
         };
         
-        $scope.addElement = function(){
-						var totalElements = wsdlDataService.getRequestEleLength();
-						me.wsdlObject.requestElement.elements.push(
-							{
-								input: "",
-								dataType: "String",
-                                id: 'input' + parseInt(totalElements + 1)
-							});
-						if(totalElements === 4){
-							me.elementLimit = true;
-						}
-                        wsdlDataService.setWsdlRequest(me.wsdlObject);
-				};
-                
-         $scope.removeElement = function(element){
-                        var index = -1;
-                        for(var i = 0; i <= wsdlDataService.getRequestEleLength() - 1; i++){
-                            if(me.wsdlObject.requestElement.elements[i]['id'] === element[0].id){
-                                index = i;
-                                break;
-                            }
-                        }
-                        me.wsdlObject.requestElement.elements.splice( index, 1 );
-                        if(me.wsdlObject.requestElement.elements.length < 5){
-                            me.elementLimit = false;
-                        }
-                        wsdlDataService.setWsdlRequest(me.wsdlObject);
-				};
-        /*$scope.$watch('me.disableResEle', function(newValue, oldValue, scope) {
-               if(newValue !== oldValue){
-                    me.disableReqMsg = false;
-               }else{                    
-                    me.disableReqMsg = true;
-               }
-        });
-        
-        $scope.$watch('me.disableReqMsg', function(newValue, oldValue, scope) {
-               if(newValue !== oldValue){
-                    me.disableResMsg = false;
-               }else{                    
-                    me.disableResMsg = true;
-               }
-        });
-        
-        $scope.$watch('me.disableResMsg', function(newValue, oldValue, scope) {
-               if(newValue !== oldValue){
-                    me.disableGenerate = false;
-               }else{                    
-                    me.disableGenerate = true;
-               }
-        });*/
-       
-       
-       $scope.addResponseElement = function () {
-          
-       };
-       
+         $scope.addResponseElement = function (me) {
+            me.showDialog = true;
+            me.showResEle = true;
+            ngDialog.open(
+                {
+                template: 'dialogTemplId',
+                className: 'ngdialog-theme-default',
+                scope: $scope,
+                overlay: true,
+                controller: $controller('responseElementCtrl', {
+                    $scope: $scope,
+                    wsdl: me
+                }),
+                closeByNavigation: true,
+                preCloseCallback: function(value) {
+                }
+            });
+            
+        };
+     
        $scope.addRequestMessage = function () {
            
        };

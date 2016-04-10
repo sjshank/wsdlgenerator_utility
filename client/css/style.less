@@ -100,7 +100,6 @@ h1 {
     min-height: 0;
     padding: 0;
     vertical-align: middle;
-    margin-bottom: 18px;
     .getBorder(#666);
 }
 .form-input-box {
@@ -140,14 +139,25 @@ h1 {
 }
 .delete-icon {
     margin-left:8px;
+    position: absolute;
+    line-height: 1.8;
 }
 .element-box {
-    .getWidth(42%);
+    .getWidth(100%);
 }
 .data-type-options {
     margin-left:8px;
-    width:32%;
+    width:100%;
 }
 .btn-icon {
     padding : 6px 12px !important;
+}
+.elementDiv {
+    display: table;
+    .element-box {
+        display: table-row;
+    }
+    .errorTxt {
+        display: table-row;
+    }
 }

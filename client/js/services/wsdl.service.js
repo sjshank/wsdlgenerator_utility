@@ -20,7 +20,7 @@ angular.module('wsdlApp')
                         responseElement : {
                             name: '',
                             elements: [
-                                {input: '', dataType: 'String', id: 'input1'}
+                                {output: '', dataType: 'String', id: 'output'}
                             ]
                         }
                 };
@@ -42,12 +42,32 @@ angular.module('wsdlApp')
                 var _getResponseEleLength = function() {
 					return _wsdl.responseElement.elements.length;
 				};
+                var _resetRequestEle = function() {
+					_wsdl.requestElement = {
+                         name: '',
+                            elements: [
+                                {input: '', dataType: 'String', id: 'input1'}
+                            ]
+                    };
+                    return _wsdl;
+				};
+                var _resetResponseEle = function() {
+					_wsdl.responseElement = {
+                         name: '',
+                            elements: [
+                                {input: '', dataType: 'String', id: 'output'}
+                            ]
+                    };
+                    return _wsdl;
+				};
                 
 				return {
                     'getWsdlRequest': _getWsdlObject,
                     'setWsdlRequest': _setWsdlObject,
                     'getRequestEleLength': _getRequestEleLength,
                     'getResponseEleLength': _getResponseEleLength,
+                    'resetReqEle': _resetRequestEle,
+                    'resetResEle': _resetResponseEle,
                     'reset': _reset
                 };
 });

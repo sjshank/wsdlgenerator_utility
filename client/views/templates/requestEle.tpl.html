@@ -1,24 +1,34 @@
-<div>
-    <h2>Add Request Elements</h2>
-    <br>
-    <div class="form-control form-input-div">
-            <label class="form-input-text" for="reqEleName">Request Element Name</label>
-            <input type="text" class="form-input-box form-control"  name="reqEleName" ng-model= "me.wsdlObject.requestElement.name" id="reqEleName" placeholder="Enter Name" >
-    </div>
-    <div>
-        <label style="margin-top:4px;" for="request">Elements</label>
-        <button type="button" ng-click="addElement()" ng-disabled="me.elementLimit" class="delete-Btn btn  btn-primary float-right">Add Element</button>
-    </div>
-        <div  ng-repeat="element in me.wsdlObject.requestElement.elements">
-            <br>
-            <input type="text" class="element-box form-control float-left" id="{{element.input}}"  placeholder="Enter Input" ng-model="element.input" required>
-            <select class="float-left form-control data-type-options" ng-model="element.dataType" ng-options="v for v in me.dataTypes"></select>
-            <button type="button" ng-click="removeElement(element)" class="delete-icon btn btn-sm btn-danger">
-                <i class="glyphicon glyphicon-remove">
-                </i>
-            </button>
-            
-        </div>
+<div ng-show="me.showReqEle">
+    <form role='form' name='elementForm' >
+        <h2>Add Request Elements</h2>
         <br>
-    <button type="button"  ng-hide="me.wsdlObject.requestElement.elements.length < 1" class="btn btn-primary">Add</button>
+        <div class="form-control form-input-div" ng-class="{ 'hasError' : elementForm.eleName.$invalid && !elementForm.eleName.$pristine }">
+                <label class="form-input-text" for="eleName">Request Element Name</label>
+                <input type="text" class="form-input-box form-control"  name="eleName" ng-model= "me.wsdlObject.requestElement.name" id="eleName" placeholder="Enter Name" ngvalidate-Character required>
+        </div>
+        <small class="errorTxt" ng-if="elementForm.eleName.$dirty && elementForm.eleName.$error.ngvalidateCharacter">{{ REQ_ELE_NAME_ERR }}</small>
+        <br>
+        <div>
+            <label style="margin-top:4px;" for="request">Elements</label>
+            <button type="button" ng-click="addElement()" ng-disabled="me.elementLimit" class=" btn  btn-primary float-right">Add Element</button>
+        </div>
+            <div  ng-repeat="element in me.wsdlObject.requestElement.elements">
+                <br>
+                <div class="float-left elementDiv">
+                    <input type="text" ng-class="{ 'hasError' : elementForm.{{element.id}}.$invalid && !elementForm.{{element.id}}.$pristine }" class="element-box form-control float-left" name="{{element.id}}" id="{{element.id}}"  placeholder="Enter Input" ng-model="element.input" ngvalidate-Character required>
+                    <small class="errorTxt" ng-show="elementForm.{{element.id}}.$dirty && elementForm.{{element.id}}.$error.ngvalidateCharacter">{{ ELEMENT_NAME_ERR }}</small>
+                </div>
+                
+                <div class="float-left">
+                    <select class="float-left form-control data-type-options" ng-model="element.dataType" ng-options="v for v in me.dataTypes"></select>
+                    <button type="button" ng-click="removeElement(element)" class="delete-icon btn btn-sm btn-danger">
+                        <i class="glyphicon glyphicon-remove">
+                        </i>
+                    </button>
+                </div>
+                <br><br>
+            </div>
+            <br>
+        <input type="submit" ng-click="add()" ng-disabled="elementForm.$invalid"  ng-hide="me.wsdlObject.requestElement.elements.length < 1" class="btn btn-primary" value="Add" id="add">
+    </form>
 </div>
