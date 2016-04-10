@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>WSDL Generator Utility</title>
-    <link rel="stylesheet" href="js/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="ng-dialog/css/ngDialog.min.css" />
+    <link rel="stylesheet" href="ng-dialog/css/ngDialog-theme-default.min.css" />
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -14,13 +16,20 @@
     <!-- Loading required libraries -->
     <script src="angular/angular.min.js"></script>
     <script src="angular-route/angular-route.min.js"></script>
+    <script src="angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+    <script src="ng-dialog/js/ngDialog.min.js"></script>
 
     <!-- Loading application js files -->
+    <script src="js/appConfig/app.route.js"></script>
+    <script src="js/appConfig/app.config.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/controllers/generate.controller.js"></script>
+    <script src="js/controllers/home.ctrl.js"></script>
+    <script src="js/controllers/generate.ctrl.js"></script>
     <script src="js/directives/header.directive.js"></script>
-    <script src="js/directives/validator.directive.js"></script>
-    <script src="js/services/wsdlApi.service.js"></script>
+    <script src="js/directives/validator.directives.js"></script>
+    <script src="js/directives/wsdl.directives.js"></script>
+    <script src="js/services/api.service.js"></script>
+    <script src="js/services/wsdl.service.js"></script>
  
 </body>
 </html>
