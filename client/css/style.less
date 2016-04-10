@@ -73,6 +73,9 @@ h1 {
   color: red;
   font-size: 12px;
 }
+.hasError {
+    .getBorder(red) !important;
+}
 .input-group {
     .getWidth(100%) !important;
 }
@@ -98,7 +101,7 @@ h1 {
     padding: 0;
     vertical-align: middle;
     margin-bottom: 18px;
-    .getBorder(#666) !important;
+    .getBorder(#666);
 }
 .form-input-box {
     background: none;
@@ -110,6 +113,7 @@ h1 {
     padding-top: 0;
     padding-bottom: 0;
     vertical-align: middle;
+    box-shadow: none !important;
 }
 .form-input-text {
     display: table-cell;

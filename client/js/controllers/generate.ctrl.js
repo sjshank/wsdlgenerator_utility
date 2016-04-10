@@ -2,21 +2,13 @@
 
 angular.module('wsdlApp')
     
-    .controller('generateCtrl', ['$scope',  '$log', 'wsdlAPI', 'appConstants', 'ngDialog',
-                     function($scope, $log, wsdlAPI, appConstants, ngDialog) {
+    .controller('generateCtrl', ['$scope',  '$log', 'wsdlAPI', 'appConstants', 'ngDialog', 'wsdlDataService',
+                     function($scope, $log, wsdlAPI, appConstants, ngDialog, wsdlDataService) {
        var me = this;
+       wsdlDataService.reset();
        me.hasError = false;
        me.dataTypes = ['String', 'Integer', 'Boolean'];
-       me.wsdlObject = {
-           serviceName: '',
-           targetNamespace: 'http://service.lfg.com/',
-            requestElement : {
-                name: '',
-                elements: [
-                    {input: '', dataType: 'String', id: 'input1'}
-                ]
-            }
-       };
+       me.wsdlObject = wsdlDataService.getWsdlRequest();
        me.disableReqEle = true;
        me.disableResEle = true;
        me.disableReqMsg = true;
@@ -52,7 +44,7 @@ angular.module('wsdlApp')
         };
         
         $scope.addElement = function(){
-						var totalElements = me.wsdlObject.requestElement.elements.length;
+						var totalElements = wsdlDataService.getRequestEleLength();
 						me.wsdlObject.requestElement.elements.push(
 							{
 								input: "",
@@ -62,13 +54,13 @@ angular.module('wsdlApp')
 						if(totalElements === 4){
 							me.elementLimit = true;
 						}
+                        wsdlDataService.setWsdlRequest(me.wsdlObject);
 				};
                 
          $scope.removeElement = function(element){
-                        var l = me.wsdlObject.requestElement.elements.length;
                         var index = -1;
-                        for(var i = 0; i <= l - 1; i++){
-                            if(me.wsdlObject.requestElement.elements[i]['id'] === element.id){
+                        for(var i = 0; i <= wsdlDataService.getRequestEleLength() - 1; i++){
+                            if(me.wsdlObject.requestElement.elements[i]['id'] === element[0].id){
                                 index = i;
                                 break;
                             }
@@ -77,6 +69,7 @@ angular.module('wsdlApp')
                         if(me.wsdlObject.requestElement.elements.length < 5){
                             me.elementLimit = false;
                         }
+                        wsdlDataService.setWsdlRequest(me.wsdlObject);
 				};
         /*$scope.$watch('me.disableResEle', function(newValue, oldValue, scope) {
                if(newValue !== oldValue){
@@ -101,6 +94,19 @@ angular.module('wsdlApp')
                     me.disableGenerate = true;
                }
         });*/
+       
+       
+       $scope.addResponseElement = function () {
+          
+       };
+       
+       $scope.addRequestMessage = function () {
+           
+       };
+       
+       $scope.addResponseMessage = function () {
+          
+       };
        
        $scope.generateWsdl = function () {
            wsdlAPI.generateWSDL(me.wsdlRequestObj).then( function(data) {

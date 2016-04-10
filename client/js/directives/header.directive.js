@@ -6,7 +6,7 @@ angular.module('wsdlApp')
 .directive('appHeader', function() {
     return {
         restrict: 'E',
-        templateUrl: 'views/header.tpl.html',
+        templateUrl: 'views/templates/header.tpl.html',
         scope: {
             selected: '@'
         },

@@ -4,55 +4,45 @@
 
     <!-- To display error message -->
     <div ng-cloak ng-if="me.hasError">
-        <ng-include src="'views/error.tpl.html'"></ng-include>
+        <ng-include src="'views/templates/error.tpl.html'"></ng-include>
     </div>
     
     <div ng-hide="me.showDialog">
-        <ng-include src="'views/dialog.tpl.html'"></ng-include>
+        <ng-include src="'views/dialog.html'"></ng-include>
     </div>
 
     <div class="row form-div" >
-        <form role="form" ng-submit="generateWsdl()">
+       
+        <div class="col-md-8">
+            <form name="wsdlForm" novalidate role="form" ng-submit="generateWsdl(me.wsdlObject)">
 
-            <div class="col-lg-8">
-            <h2 ><strong>Generate WSDL</strong></h2>
-            <br>
-                <div class="form-control form-input-div">
-                    <label class="form-input-text" for="serviceName">Web Service Name</label>
-                    <input type="text" class="form-input-box form-control"  name="serviceName" ng-model= "me.wsdlObject.serviceName" id="serviceName" placeholder="Enter Service Name" >
-                </div>
-                <div class="form-control form-input-div">
-                    <label class="form-input-text" for="targetNamespace">Target Namespace</label>
-                    <div class="input-group">
-                        <input type="text" class="form-input-box form-control readonlyClass" readonly  id="targetNamespace" name="targetNamespace" ng-model = "me.wsdlObject.targetNamespace">
+                <h2 ><strong>Generate WSDL</strong></h2>
+                <br>
+                    <div class="form-control form-input-div" ng-class="{ 'hasError' : wsdlForm.serviceName.$invalid && !wsdlForm.serviceName.$pristine }">
+                        <label class="form-input-text" for="serviceName">Web Service Name</label>
+                        <input type="text" class="form-input-box form-control"  name="serviceName" ng-model= "me.wsdlObject.serviceName" id="serviceName" placeholder="Enter Service Name" 
+                        ngvalidate-character >
+                        
                     </div>
-                </div>
-                
-                <br>
-                <div class="float-left margin-left-10perc">
-                    <input type="button" ng-click="addRequestElement()"  id="requestEle" ng-disabled="me.disableReqEle" value="Add Request Element" class="btn btn-primary button-cls">
-                </div>
-                <div class="float-left margin-left-10perc">
-                    <input type="button" id="responseEle" ng-disabled="me.disableResEle" value="Add Response Element" class="btn btn-primary button-cls">
-                </div>
-                <div class="clear-both"></div>
-                
-                <br>
-                <div class="float-left margin-left-10perc">
-                    <input type="button"  id="requestEle" ng-disabled="me.disableReqMsg" value="Add Request Message" class="btn btn-primary button-cls">
-                </div>
-                <div class="float-left margin-left-10perc">
-                    <input type="button"  id="responseEle" ng-disabled="me.disableResMsg" value="Add Response Message" class="btn btn-primary button-cls">
-                </div>
-                <div class="clear-both"></div>
-                
-                <br>
-                <div class="textalign-center">
-                    <input type="submit" style="margin-right: 5px;" ng-disabled="me.disableGenerate" id="generate" value="Generate" class="btn btn-primary">
-                </div>
-            </div>
-        </form>
+                    <small class="errorTxt" ng-if="wsdlForm.serviceName.$dirty && wsdlForm.serviceName.$error.ngvalidateCharacter">{{ SERVICE_NAME_ERR }}</small>
+                    <div class="form-control form-input-div">
+                        <label class="form-input-text" for="targetNamespace">Target Namespace</label>
+                        <div class="input-group">
+                            <input type="text" class="form-input-box form-control readonlyClass" readonly  id="targetNamespace" name="targetNamespace" ng-model = "me.wsdlObject.targetNamespace">
+                        </div>
+                    </div>
+                    
+                    <br>
+                    <ngbutton-template me = "me"
+                                        add-request-element = "addRequestElement(me.wsdlObject)"
+                                        add-response-element = "addResponseElement(me.wsdlObject)"
+                                        add-request-message = "addRequestMessage(me.wsdlObject)"
+                                        add-request-message = "addResponseMessage(me.wsdlObject)"
+                                        ></ngbutton-template>
+            </form>
+        </div>
+        <div class="col-md-2"></div>
     </div>
-
+    
    
 </div>
