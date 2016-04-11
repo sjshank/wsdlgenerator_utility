@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<wsdl:definitions name="serviceName" targetNamespace="http://service.lfg.com/serviceName/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.lfg.com/serviceName/" xmlns:bons2="http://service.lfg.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<wsdl:definitions name="BusinessService" targetNamespace="http://service.lfg.com/BusinessService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.lfg.com/BusinessService" xmlns:bons2="http://service.lfg.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <wsdl:types>
-    <xsd:schema targetNamespace="http://service.lfg.com/SampleBusinessService/">
+    <xsd:schema targetNamespace="http://service.lfg.com/BusinessService">
       <xsd:element name="requestElementName">
         <xsd:complexType>
           <xsd:sequence>
@@ -26,7 +26,7 @@
   <wsdl:message name="responseMessageName">
     <wsdl:part element="tns:responseElementName" name="parameters"/>
   </wsdl:message>
-  <wsdl:portType name="serviceName">
+  <wsdl:portType name="BusinessService">
     <wsdl:operation name="methodName">
       <wsdl:input name="tns:requestMessageName"/>
       <wsdl:output name="tns:responseMessageName"/>
@@ -36,10 +36,10 @@
       <wsdl:output name="tns:responseMessageName"/>
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="serviceNameSOAP" type="tns:serviceName">
+  <wsdl:binding name="BusinessServiceSOAP" type="tns:BusinessService">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
     <wsdl:operation name="methodName">
-      <soap:operation soapAction="http://service.lfg.com/serviceName/methodName"/>
+      <soap:operation soapAction="http://service.lfg.com/BusinessService/methodName"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>
@@ -48,9 +48,9 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="serviceName">
-    <wsdl:port binding="tns:serviceNameSOAP" name="serviceNameSOAP">
-      <soap:address location="http://localhost:9080/service-root-context/serviceName"/>
+  <wsdl:service name="BusinessService">
+    <wsdl:port binding="tns:BusinessServiceserviceNameSOAP" name="BusinessServiceSOAP">
+      <soap:address location="http://localhost:9080/service-root-context/BusinessService"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

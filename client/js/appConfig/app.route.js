@@ -7,20 +7,20 @@
 
 angular
     .module('app.routes', ['ngRoute'])
-    
+
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider
             .when('/home', {
-                templateUrl:'views/home.html',
-                controller:'homeCtrl',
-                controllerAs:'me'
+                templateUrl: 'views/home.html',
+                controller: 'homeCtrl',
+                controllerAs: 'me'
             })
             .when('/generate', {
-                templateUrl:'views/generator.html',
-                controller:'generateCtrl',
-                controllerAs:'wsdl'
+                templateUrl: 'views/generator.html',
+                controller: 'generateCtrl',
+                controllerAs: 'wsdl'
             })
             .otherwise({
-                redirectTo:'/home'
+                redirectTo: '/home'
             });
-   }]);
+    }]);

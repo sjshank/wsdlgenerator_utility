@@ -2,9 +2,12 @@
 
 angular.module('wsdlApp')
 
+     //Controller responsible for adding new Response Element popup request
     .controller('responseElementCtrl', ['$scope', '$rootScope', 'ngDialog', 'wsdlDataService', 'wsdl',
         function($scope, $rootScope, ngDialog, wsdlDataService, wsdl) {
             wsdl.errorExist = false;
+            
+            //Function for adding Response Element 
             $scope.add = function() {
                 try {
                     wsdl.errorExist = false;

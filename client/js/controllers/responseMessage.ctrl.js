@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('wsdlApp')
-
+    
+    //Controller responsible for adding new SOAP Response Message and Mapping with response element popup request. 
     .controller('responseMessageCtrl', ['$scope', '$log', '$rootScope', 'ngDialog', 'wsdlDataService', 'wsdl', 'appConstants',
         function($scope, $log, $rootScope, ngDialog, wsdlDataService, wsdl, appConstants) {
             wsdl.errorExist = false;

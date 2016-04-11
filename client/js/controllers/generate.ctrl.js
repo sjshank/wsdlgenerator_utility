@@ -6,6 +6,7 @@ angular.module('wsdlApp')
         'wsdlDataService', '$controller', 'FileSaver', 'Blob',
         function($scope, $rootScope, $log, wsdlAPI, appConstants, ngDialog,
             wsdlDataService, $controller, FileSaver, Blob) {
+
             var wsdl = this;
             wsdl.hasError = false;
             wsdl.dataTypes = appConstants.DATA_TYPES;
@@ -19,7 +20,15 @@ angular.module('wsdlApp')
             wsdl.showResEle = false;
             wsdl.showReqMsg = false;
             wsdl.showResMsg = false;
-            
+
+            var options = {
+                className: 'ngdialog-theme-default',
+                scope: $scope,
+                overlay: true,
+                closeByNavigation: true,
+                preCloseCallback: function(value) { }
+            }
+
             //Initialize wsdl request object
             try {
                 wsdlDataService.reset();
@@ -44,25 +53,18 @@ angular.module('wsdlApp')
                 }
             });
 
+            //Function for displaying Request Element popup
             $scope.addRequestElement = function(wsdl) {
                 try {
                     wsdl.showDialog = true;
                     wsdl.showReqEle = true;
                     wsdl.hasError = false;
-                    ngDialog.open(
-                        {
-                            template: 'requestElementDialog',
-                            className: 'ngdialog-theme-default',
-                            scope: $scope,
-                            overlay: true,
-                            controller: $controller('requestElementCtrl', {
-                                $scope: $scope,
-                                wsdl: wsdl
-                            }),
-                            closeByNavigation: true,
-                            preCloseCallback: function(value) {
-                            }
-                        });
+                    options.template = 'requestElementDialog';
+                    options.controller = $controller('requestElementCtrl', {
+                        $scope: $scope,
+                        wsdl: wsdl
+                    });
+                    ngDialog.open(options);
                 } catch (err) {
                     $log.error('Error while rendering request element window ', err);
                     wsdl.hasError = true;
@@ -70,25 +72,18 @@ angular.module('wsdlApp')
                 }
             };
 
+            //Function for displaying Response Element popup
             $scope.addResponseElement = function(wsdl) {
                 try {
                     wsdl.showDialog = true;
                     wsdl.showResEle = true;
                     wsdl.hasError = false;
-                    ngDialog.open(
-                        {
-                            template: 'responseElementDialog',
-                            className: 'ngdialog-theme-default',
-                            scope: $scope,
-                            overlay: true,
-                            controller: $controller('responseElementCtrl', {
-                                $scope: $scope,
-                                wsdl: wsdl
-                            }),
-                            closeByNavigation: true,
-                            preCloseCallback: function(value) {
-                            }
-                        });
+                    options.template = 'responseElementDialog';
+                    options.controller = $controller('responseElementCtrl', {
+                        $scope: $scope,
+                        wsdl: wsdl
+                    });
+                    ngDialog.open(options);
                 } catch (err) {
                     $log.error('Error while rendering response element window ', err);
                     wsdl.hasError = true;
@@ -96,25 +91,18 @@ angular.module('wsdlApp')
                 }
             };
 
+            //Function for displaying Request Message popup
             $scope.addRequestMessage = function() {
                 try {
                     wsdl.showDialog = true;
                     wsdl.showReqMsg = true;
                     wsdl.hasError = false;
-                    ngDialog.open(
-                        {
-                            template: 'requestMessageDialog',
-                            className: 'ngdialog-theme-default',
-                            scope: $scope,
-                            overlay: true,
-                            controller: $controller('requestMessageCtrl', {
-                                $scope: $scope,
-                                wsdl: wsdl
-                            }),
-                            closeByNavigation: true,
-                            preCloseCallback: function(value) {
-                            }
-                        });
+                    options.template = 'requestMessageDialog';
+                    options.controller = $controller('requestMessageCtrl', {
+                        $scope: $scope,
+                        wsdl: wsdl
+                    });
+                    ngDialog.open(options);
                 } catch (err) {
                     $log.error('Error while rendering request message window ', err);
                     wsdl.hasError = true;
@@ -122,47 +110,53 @@ angular.module('wsdlApp')
                 }
             };
 
+            //Function for displaying Response Message popup
             $scope.addResponseMessage = function() {
                 try {
                     wsdl.showDialog = true;
                     wsdl.showResMsg = true;
                     wsdl.hasError = false;
-                    ngDialog.open(
-                        {
-                            template: 'responseMessageDialog',
-                            className: 'ngdialog-theme-default',
-                            scope: $scope,
-                            overlay: true,
-                            controller: $controller('responseMessageCtrl', {
-                                $scope: $scope,
-                                wsdl: wsdl
-                            }),
-                            closeByNavigation: true,
-                            preCloseCallback: function(value) {
-                            }
-                        });
+                    options.template = 'responseMessageDialog';
+                    options.controller = $controller('responseMessageCtrl', {
+                        $scope: $scope,
+                        wsdl: wsdl
+                    });
+                    ngDialog.open(options);
                 } catch (err) {
                     $log.error('Error while rendering response message window ', err);
                     wsdl.hasError = true;
                     wsdl.errorMsg = appConstants.SERVICE_ERROR;
                 }
             };
-
+            
+            //Function for sending WSDL Request object and generating SOAP WSDL
             $scope.generateWsdl = function() {
-                var wsdlRequest = wsdlDataService.getWsdlRequest();
-                wsdlAPI.generateWSDL(wsdlRequest).then(function(data) {
-                    if (data && data.errMsg) {
+                try {
+                    var wsdlRequest = wsdlDataService.getWsdlRequest();
+                    wsdlAPI.generateWSDL(wsdlRequest).then(function(data) {
+                        if (data && data.errMsg) {
+                            wsdl.hasError = true;
+                            wsdl.errorMsg = data.errMsg;
+                            return;
+                        }
+                        else if (data && !data.errMsg) {
+                            wsdl.hasError = false;
+                            var f = new Blob([data], { type: 'text/wsdl' });
+                            FileSaver.saveAs(f, appConstants.FILE_NAME);
+                        }
+                        else{
+                            wsdl.hasError = true;
+                            wsdl.errorMsg = appConstants.WSDL_GENERATE_ERR;
+                        }
+                    }).catch(function(err) {
                         wsdl.hasError = true;
-                        wsdl.errorMsg = data.errMsg;
-                        return;
-                    }
-                    wsdl.hasError = false;
-                    var f = new Blob([data], { type: 'text/wsdl' });
-                    FileSaver.saveAs(f, 'SOAP_WSDL.wsdl');
-                }).catch(function(err) {
+                        wsdl.errorMsg = appConstants.WSDL_GENERATE_ERR;
+                    });
+                } catch (err) {
+                    $log.error('Error while generating SOAP-WSDL  ', err);
                     wsdl.hasError = true;
-                    wsdl.errorMsg = appConstants.SERVICE_ERROR;
-                });
+                    wsdl.errorMsg = appConstants.WSDL_GENERATE_ERR;
+                }
             };
 
         }]);

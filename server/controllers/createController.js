@@ -14,10 +14,11 @@ const log4js = require('log4js'),
       
 //generate wsdl
 exports.createWsdl = function(reqObject, resObject) {
-    log.debug("******Create WSDL Starts******");
-    try{
+    log.debug("******Create WSDL Starts******", reqObject.body);
+    try{        
+                var wsdlRequest = reqObject.body;
                 var getWSDLFile = function(){
-                      var result  = xmlDocHelper.buildXMLDoc(reqObject);
+                      var result  = xmlDocHelper.buildXMLDoc(wsdlRequest);
                       return new Promise(function(resolve, reject){
                           parseString(result)
                             .then(function(jsonObj){

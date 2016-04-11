@@ -16,7 +16,7 @@ angular.module('wsdlApp')
     }
 })
 
-//Directive for rendering footer
+//Directive for rendering footer section
 .directive('appFooter', function() {
     return {
         restrict: 'E',
@@ -25,4 +25,4 @@ angular.module('wsdlApp')
 
         }
     }
-})
+});

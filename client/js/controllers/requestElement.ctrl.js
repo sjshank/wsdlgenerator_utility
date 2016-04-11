@@ -1,10 +1,13 @@
 'use strict';
 
 angular.module('wsdlApp')
-
+    
+    //Controller responsible for adding new Request Element popup request.
     .controller('requestElementCtrl', ['$scope', '$log', 'ngDialog', 'wsdlDataService', 'wsdl', 'appConstants',
         function($scope, $log, ngDialog, wsdlDataService, wsdl, appConstants) {
             wsdl.errorExist = false;
+            
+            //Function for adding new elements inside requestElements array
             $scope.addElement = function(currentReqElement) {
                 try {
                     wsdl.errorExist = false;
@@ -25,7 +28,8 @@ angular.module('wsdlApp')
                     wsdl.errorMsg = appConstants.NEW_ELEMENT_ERR;
                 }
             };
-
+            
+            //Function for removing elements from requestElements array
             $scope.removeElement = function(currentReqElement) {
                 try {
                     wsdl.errorExist = false;
@@ -48,7 +52,8 @@ angular.module('wsdlApp')
                     wsdl.errorMsg = appConstants.DELETE_ELEMENT_ERR;
                 }
             };
-
+            
+            //Function for adding requestElements inside WSDL Request
             $scope.add = function() {
                 try {
                     wsdl.errorExist = true;
@@ -70,4 +75,4 @@ angular.module('wsdlApp')
                     wsdl.errorMsg = appConstants.REQ_ELEMENT_ERR;
                 }
             };
-        }])
+        }]);
