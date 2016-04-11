@@ -15,7 +15,8 @@ angular
         DELETE_ELEMENT_ERR : "Failed to Delete Element. Please try again.",
         NEW_ELEMENT_ERR : "Failed to Append New Element. Please try again.",
         REQ_MESSAGE_ERR : "Failed to Add SOAP Request Message. Please try again.",
-        RES_MESSAGE_ERR : "Failed to Add SOAP Response Message. Please try again."
+        RES_MESSAGE_ERR : "Failed to Add SOAP Response Message. Please try again.",
+        DATA_TYPES : ['String', 'Integer', 'Boolean']
 })
 .run(['$rootScope', function(rootScope){
     rootScope.subHeading = "A MEAN Stack based web portal to generate draft version of SOAP-WSDL. Grab WSDL and save in your pocket.";

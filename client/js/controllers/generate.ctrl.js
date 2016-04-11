@@ -3,12 +3,12 @@
 angular.module('wsdlApp')
 
     .controller('generateCtrl', ['$scope', '$rootScope', '$log', 'wsdlAPI', 'appConstants', 'ngDialog',
-                                 'wsdlDataService', '$controller', 'FileSaver', 'Blob',
+        'wsdlDataService', '$controller', 'FileSaver', 'Blob',
         function($scope, $rootScope, $log, wsdlAPI, appConstants, ngDialog,
-                 wsdlDataService, $controller, FileSaver, Blob) {
+            wsdlDataService, $controller, FileSaver, Blob) {
             var wsdl = this;
             wsdl.hasError = false;
-            wsdl.dataTypes = ['String', 'Integer', 'Boolean'];
+            wsdl.dataTypes = appConstants.DATA_TYPES;
             wsdl.disableReqEle = true;
             wsdl.disableResEle = true;
             wsdl.disableReqMsg = true;
@@ -19,7 +19,8 @@ angular.module('wsdlApp')
             wsdl.showResEle = false;
             wsdl.showReqMsg = false;
             wsdl.showResMsg = false;
-
+            
+            //Initialize wsdl request object
             try {
                 wsdlDataService.reset();
                 wsdl.wsdlObject = wsdlDataService.getWsdlRequest();
@@ -28,7 +29,7 @@ angular.module('wsdlApp')
             }
 
 
-            //watch function for state value to display/hide city text box
+            //watch function for serviceName.
             $scope.$watch('wsdl.wsdlObject.serviceName', function(newValue, oldValue, scope) {
                 try {
                     if (typeof newValue !== 'undefined' && newValue !== "" && newValue !== oldValue) {
@@ -150,8 +151,17 @@ angular.module('wsdlApp')
             $scope.generateWsdl = function() {
                 var wsdlRequest = wsdlDataService.getWsdlRequest();
                 wsdlAPI.generateWSDL(wsdlRequest).then(function(data) {
+                    if (data && data.errMsg) {
+                        wsdl.hasError = true;
+                        wsdl.errorMsg = data.errMsg;
+                        return;
+                    }
+                    wsdl.hasError = false;
                     var f = new Blob([data], { type: 'text/wsdl' });
                     FileSaver.saveAs(f, 'SOAP_WSDL.wsdl');
+                }).catch(function(err) {
+                    wsdl.hasError = true;
+                    wsdl.errorMsg = appConstants.SERVICE_ERROR;
                 });
             };
 
