@@ -22,9 +22,10 @@ Libraries :
     3. bluebird - For writing Promises in order to avoid callback heck
     4. debug/log4js - For logging info/error.
     5. mongoose - mongodb connection, datamanipualtion for Nodejs/Expressjs
-    6. ng-dialog - Rendering popus
+    6. ng-dialog - Rendering popus  https://github.com/likeastore/ngDialog
     7. angular-route - angular routing
     8. less - compiling less into css
+    9. Angular-File-Saver  -- Download files via POST request in AngularJs  https://github.com/alferov/angular-file-saver
     
 Database :
 
