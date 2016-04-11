@@ -1,12 +1,17 @@
-<script type="text/ng-template" id="dialogTemplId">
+<script type="text/ng-template" id="requestElementDialog">
+    <request-ele-tpl wsdl="wsdl" add-element="addElement(wsdl.wsdlObject.requestElements)" remove-element="removeElement(wsdl.wsdlObject.requestElements)"
+    add="add()"></request-ele-tpl>
+</script>
 
-<request-ele-tpl me = "me"
-                    add-element = "addElement()"
-                    remove-element = "removeElement(me.wsdlObject.requestElement.elements)"
-                    add = "add()"
-                    ></request-ele-tpl>
-                    
-<response-ele-tpl me = "me"
-                    add = "add()"
-                    ></response-ele-tpl>                    
+<script type="text/ng-template" id="responseElementDialog">
+    <response-ele-tpl wsdl="wsdl" add="add()"></response-ele-tpl>
+</script>
+
+
+<script type="text/ng-template" id="requestMessageDialog">
+    <request-msg-tpl wsdl="wsdl" add="add()"></request-msg-tpl>
+</script>
+
+<script type="text/ng-template" id="responseMessageDialog">
+    <response-msg-tpl wsdl="wsdl" add="add()"></response-msg-tpl>
 </script>

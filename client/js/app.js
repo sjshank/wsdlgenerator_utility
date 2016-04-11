@@ -5,4 +5,4 @@
 
 'use strict';
 
-angular.module('wsdlApp', ['app.routes', 'app.config', 'ngDialog', 'ui.bootstrap']);
+angular.module('wsdlApp', ['app.routes', 'app.config', 'ngDialog', 'ui.bootstrap', 'ngFileSaver']);

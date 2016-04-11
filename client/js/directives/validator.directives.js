@@ -11,6 +11,17 @@ angular.module('wsdlApp')
                 validateInput('ngvalidateCharacter', appConstant.SERVICE_NAME_REG_EX, ngModel);
         }           
     };
+}])
+
+//Directive for validating alphabet inputs
+.directive("ngvalidateAlphanumeric", ['$log', 'appConstants', function ($log, appConstant) {
+    return {
+        restrict: "A",
+        require: "?ngModel",
+        link: function (scope, element, attributes, ngModel) {
+                validateInput('ngvalidateAlphanumeric', appConstant.ALPHA_NUMERIC_REG_EX, ngModel);
+        }           
+    };
 }]);
 
 function validateInput(dirName, regEx, ngModel){

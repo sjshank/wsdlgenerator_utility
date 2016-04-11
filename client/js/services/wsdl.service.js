@@ -11,18 +11,38 @@ angular.module('wsdlApp')
 				 var _init = {
                     serviceName: '',
                     targetNamespace: 'http://service.lfg.com/',
-                        requestElement : {
-                            name: '',
-                            elements: [
-                                {input: '', dataType: 'String', id: 'input1'}
-                            ]
-                        },
-                        responseElement : {
-                            name: '',
-                            elements: [
-                                {output: '', dataType: 'String', id: 'output'}
-                            ]
-                        }
+                        requestElements : [
+                            {
+                                id: 'reqEle1',
+                                name: '',
+                                elements: [
+                                    {input: '', dataType: 'String', id: 'input1'}
+                                ]
+                            }
+                        ],
+                        responseElements : [ 
+                            {
+                                id: 'resEle1',
+                                name: '',
+                                elements: [
+                                    {output: '', dataType: 'String', id: 'output1'}
+                                ]
+                            }
+                        ],
+                        requestMessages : [
+                            {
+                                id: 'reqMsg1',
+                                messageName: '',
+                                requestElement: {name: '', id: 'reqEle1'}
+                            }
+                        ],
+                        responseMessages : [ 
+                            {
+                                id: 'resMsg1',
+                                name: '',
+                                responseElement: {name: '', id: 'resEle1'}
+                            }
+                        ]
                 };
                 
                 var _wsdl = {};
@@ -37,27 +57,29 @@ angular.module('wsdlApp')
 					return _wsdl;
 				};
                 var _getRequestEleLength = function() {
-					return _wsdl.requestElement.elements.length;
+					return _wsdl.requestElements.length;
 				};
                 var _getResponseEleLength = function() {
-					return _wsdl.responseElement.elements.length;
+					return _wsdl.responseElements.length;
 				};
                 var _resetRequestEle = function() {
-					_wsdl.requestElement = {
+					_wsdl.requestElements = [{
+                        id: 'reqEle1',
                          name: '',
                             elements: [
                                 {input: '', dataType: 'String', id: 'input1'}
                             ]
-                    };
+                    }];
                     return _wsdl;
 				};
                 var _resetResponseEle = function() {
-					_wsdl.responseElement = {
+					_wsdl.responseElements = [{
+                        id: 'resEle1',
                          name: '',
                             elements: [
-                                {input: '', dataType: 'String', id: 'output'}
+                                {output: '', dataType: 'String', id: 'output'}
                             ]
-                    };
+                    }];
                     return _wsdl;
 				};
                 

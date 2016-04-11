@@ -30,14 +30,11 @@ h1 {
 .warningDiv {
   width: 66%;
 }
-.generate-container {
-  padding-left: 30px;
-  padding-right: 30px;
-}
 .sectionDiv {
   background-color: #f8f8f8;
   border: 1px solid #5e5e5e;
   border-radius: 4px;
+  margin-bottom: 30%;
 }
 .header-section {
   color: #5e5e5e;
@@ -55,7 +52,8 @@ h1 {
   width: 100% !important;
 }
 .form-div {
-  margin-left: 30%;
+  margin-left: 25%;
+  margin-bottom: 16.1%;
 }
 .textalign-center {
   text-align: center;
@@ -106,7 +104,7 @@ h1 {
   border-top-left-radius: 4px !important;
 }
 .margin-left-10perc {
-  margin-left: 10%;
+  margin-left: 12.3%;
 }
 .button-cls {
   width: 170px;
@@ -134,4 +132,18 @@ h1 {
 }
 .elementDiv .errorTxt {
   display: table-row;
+}
+.footerSec {
+  text-align: center;
+  position: relative;
+}
+.footerSec p {
+  position: absolute;
+  top: 28px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 50%;
+  height: 30%;
+  margin: auto;
 }

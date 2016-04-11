@@ -16,9 +16,7 @@ angular.module('wsdlApp')
                 var deferred = $q.defer();
                 $http.post(url, data).
                     success(function(data, status, headers, config) {
-                        if(data.results){
-                            deferred.resolve(data.results);
-                        }
+                            deferred.resolve(data);
                     }).
                     error(function(data, status, headers, config) {
                         deferred.reject(appConstants.SERVICE_ERROR);

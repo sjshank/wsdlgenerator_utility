@@ -1,22 +1,29 @@
- 'use strict';
+'use strict';
 
 angular.module('wsdlApp')
- 
- .controller('responseElementCtrl', ['$scope', '$rootScope', 'ngDialog', 'wsdlDataService', 'wsdl',
-                     function($scope, $rootScope, ngDialog, wsdlDataService, me) {
- 
-         $scope.add = function(){
-                        wsdlDataService.setWsdlRequest(me.wsdlObject);
-                        if(wsdlDataService.getResponseEleLength() >= 1){
-                            if(me.wsdlObject.requestElement.elements[0]['name'] !== ''){
-                                me.disableReqMsg = false;
-                                me.showResEle = false;
-                            }else{
-                                me.disableReqMsg = true;
-                            }
-                        }else{
-                            me.disableReqMsg = true;
+
+    .controller('responseElementCtrl', ['$scope', '$rootScope', 'ngDialog', 'wsdlDataService', 'wsdl',
+        function($scope, $rootScope, ngDialog, wsdlDataService, wsdl) {
+            wsdl.errorExist = false;
+            $scope.add = function() {
+                try {
+                    wsdl.errorExist = false;
+                    wsdlDataService.setWsdlRequest(wsdl.wsdlObject);
+                    if (wsdlDataService.getResponseEleLength() >= 1) {
+                        if (wsdl.wsdlObject.requestElements[0]['name'] !== '') {
+                            wsdl.disableReqMsg = false;
+                            wsdl.showResEle = false;
+                        } else {
+                            wsdl.disableReqMsg = true;
                         }
-                        ngDialog.close();
-				};
-}]);
+                    } else {
+                        wsdl.disableReqMsg = true;
+                    }
+                    ngDialog.close();
+                } catch (err) {
+                    $log.error('Error while adding Response Element Object and closing window ', err);
+                    wsdl.errorExist = true;
+                    wsdl.errorMsg = appConstants.RES_ELEMENT_ERR;
+                }
+            };
+        }]);

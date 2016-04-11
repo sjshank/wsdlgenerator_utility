@@ -18,7 +18,7 @@ angular
             .when('/generate', {
                 templateUrl:'views/generator.html',
                 controller:'generateCtrl',
-                controllerAs:'me'
+                controllerAs:'wsdl'
             })
             .otherwise({
                 redirectTo:'/home'

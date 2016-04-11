@@ -1,47 +1,45 @@
-<div  class="container generate-container">
+<div class="container generate-container">
 
     <app-header selected="generate"></app-header>
 
     <!-- To display error message -->
-    <div ng-cloak ng-if="me.hasError">
+    <div ng-cloak ng-if="wsdl.hasError">
         <ng-include src="'views/templates/error.tpl.html'"></ng-include>
     </div>
-    
-    <div ng-hide="me.showDialog">
+
+    <div ng-hide="wsdl.showDialog">
         <ng-include src="'views/dialog.html'"></ng-include>
     </div>
 
-    <div class="row form-div" >
-       
-        <div class="col-md-8">
-            <form name="wsdlForm" novalidate role="form" ng-submit="generateWsdl(me.wsdlObject)">
+    <div class="row form-div">
 
-                <h2 ><strong>Generate WSDL</strong></h2>
+        <div class="col-md-8">
+            <form name="wsdlForm" novalidate role="form" ng-submit="generateWsdl(wsdl.wsdlObject)">
+
+                <h2><strong>Generate WSDL</strong></h2>
                 <br>
-                    <div class="form-control form-input-div" ng-class="{ 'hasError' : wsdlForm.serviceName.$invalid && !wsdlForm.serviceName.$pristine }">
-                        <label class="form-input-text" for="serviceName">Web Service Name</label>
-                        <input type="text" class="form-input-box form-control"  name="serviceName" ng-model= "me.wsdlObject.serviceName" id="serviceName" placeholder="Enter Service Name" 
-                        ngvalidate-character required>
+                <div class="form-control form-input-div" ng-class="{ 'hasError' : wsdlForm.serviceName.$invalid && !wsdlForm.serviceName.$pristine }">
+                    <label class="form-input-text" for="serviceName">Web Service Name</label>
+                    <input type="text" class="form-input-box form-control" name="serviceName" ng-model="wsdl.wsdlObject.serviceName" id="serviceName"
+                    placeholder="Enter Service Name" ngvalidate-character required>
+                </div>
+                <small class="error-label errorTxt" ng-if="wsdlForm.serviceName.$dirty && wsdlForm.serviceName.$error.ngvalidateCharacter">{{::SERVICE_NAME_ERR }}</small>
+                <br>
+                <br>
+                <div class="form-control form-input-div">
+                    <label class="form-input-text" for="targetNamespace">Target Namespace</label>
+                    <div class="input-group">
+                        <input type="text" class="form-input-box form-control readonlyClass" readonly id="targetNamespace" name="targetNamespace"
+                        ng-model="wsdl.wsdlObject.targetNamespace">
                     </div>
-                    <small class="error-label errorTxt" ng-if="wsdlForm.serviceName.$dirty && wsdlForm.serviceName.$error.ngvalidateCharacter">{{ SERVICE_NAME_ERR }}</small>
-                    <br><br>
-                    <div class="form-control form-input-div">
-                        <label class="form-input-text" for="targetNamespace">Target Namespace</label>
-                        <div class="input-group">
-                            <input type="text" class="form-input-box form-control readonlyClass" readonly  id="targetNamespace" name="targetNamespace" ng-model = "me.wsdlObject.targetNamespace">
-                        </div>
-                    </div>
-                    <br>
-                    <ngbutton-template me = "me"
-                                        add-request-element = "addRequestElement(me)"
-                                        add-response-element = "addResponseElement(me)"
-                                        add-request-message = "addRequestMessage(me)"
-                                        add-request-message = "addResponseMessage(me)"
-                                        ></ngbutton-template>
+                </div>
+                <br>
+                <ngbutton-template wsdl="wsdl" add-request-element="addRequestElement(wsdl)" add-response-element="addResponseElement(wsdl)" add-request-message="addRequestMessage(wsdl)"
+                add-response-message="addResponseMessage(wsdl)"></ngbutton-template>
             </form>
         </div>
         <div class="col-md-2"></div>
     </div>
-    
-   
+
+    <app-footer ></app-footer>
 </div>

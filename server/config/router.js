@@ -7,7 +7,7 @@ var express = require("express"),
     router = express.Router();
 
 router.route('/createWsdl.xml')
-    .get(function(req, res) {
+    .post(function(req, res) {
         createCtrl.createWsdl(req, res);
     });
     

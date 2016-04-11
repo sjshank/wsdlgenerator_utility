@@ -1,88 +1,158 @@
 'use strict';
 
 angular.module('wsdlApp')
-    
-    .controller('generateCtrl', ['$scope', '$rootScope', '$log', 'wsdlAPI', 'appConstants', 'ngDialog', 'wsdlDataService', '$controller',
-                     function($scope, $rootScope, $log, wsdlAPI, appConstants, ngDialog, wsdlDataService, $controller) {
-       var me = this;
-       wsdlDataService.reset();
-       me.hasError = false;
-       me.dataTypes = ['String', 'Integer', 'Boolean'];
-       me.wsdlObject = wsdlDataService.getWsdlRequest();
-       me.disableReqEle = true;
-       me.disableResEle = true;
-       me.disableReqMsg = true;
-       me.disableResMsg = true;
-       me.disableGenerate = true;
-       me.showDialog = false;
-       me.showReqEle = false;
-       me.showResEle = false;
-       me.showReqMsg = false;
-       me.showResMsg = false;
-       
-       
-       //watch function for state value to display/hide city text box
-        $scope.$watch('me.wsdlObject.serviceName', function(newValue, oldValue, scope) {
-               if(typeof newValue !== 'undefined' && newValue !== "" && newValue !== oldValue){
-                    me.wsdlObject.targetNamespace = me.wsdlObject.targetNamespace + me.wsdlObject.serviceName;
-                    me.disableReqEle = false;
-               }else{
-                    me.wsdlObject.targetNamespace = 'http://service.lfg.com/';
-                    me.disableReqEle = true;
-               }
-        });
-        
-        $scope.addRequestElement = function (me) {
-            me.showDialog = true;
-            me.showReqEle = true;
-            ngDialog.open(
-                {
-                template: 'dialogTemplId',
-                className: 'ngdialog-theme-default',
-                scope: $scope,
-                overlay: true,
-                controller: $controller('requestElementCtrl', {
-                    $scope: $scope,
-                    wsdl: me
-                }),
-                closeByNavigation: true,
-                preCloseCallback: function(value) {
+
+    .controller('generateCtrl', ['$scope', '$rootScope', '$log', 'wsdlAPI', 'appConstants', 'ngDialog',
+                                 'wsdlDataService', '$controller', 'FileSaver', 'Blob',
+        function($scope, $rootScope, $log, wsdlAPI, appConstants, ngDialog,
+                 wsdlDataService, $controller, FileSaver, Blob) {
+            var wsdl = this;
+            wsdl.hasError = false;
+            wsdl.dataTypes = ['String', 'Integer', 'Boolean'];
+            wsdl.disableReqEle = true;
+            wsdl.disableResEle = true;
+            wsdl.disableReqMsg = true;
+            wsdl.disableResMsg = true;
+            wsdl.disableGenerate = true;
+            wsdl.showDialog = false;
+            wsdl.showReqEle = false;
+            wsdl.showResEle = false;
+            wsdl.showReqMsg = false;
+            wsdl.showResMsg = false;
+
+            try {
+                wsdlDataService.reset();
+                wsdl.wsdlObject = wsdlDataService.getWsdlRequest();
+            } catch (err) {
+                $log.error('Error while initializing WSDL Object ', err);
+            }
+
+
+            //watch function for state value to display/hide city text box
+            $scope.$watch('wsdl.wsdlObject.serviceName', function(newValue, oldValue, scope) {
+                try {
+                    if (typeof newValue !== 'undefined' && newValue !== "" && newValue !== oldValue) {
+                        wsdl.wsdlObject.targetNamespace = 'http://service.lfg.com/' + wsdl.wsdlObject.serviceName;
+                        wsdl.disableReqEle = false;
+                    } else {
+                        wsdl.wsdlObject.targetNamespace = 'http://service.lfg.com/';
+                        wsdl.disableReqEle = true;
+                    }
+                } catch (err) {
+                    $log.error('Error while watching serviceName scope object', err);
                 }
             });
-        };
-        
-         $scope.addResponseElement = function (me) {
-            me.showDialog = true;
-            me.showResEle = true;
-            ngDialog.open(
-                {
-                template: 'dialogTemplId',
-                className: 'ngdialog-theme-default',
-                scope: $scope,
-                overlay: true,
-                controller: $controller('responseElementCtrl', {
-                    $scope: $scope,
-                    wsdl: me
-                }),
-                closeByNavigation: true,
-                preCloseCallback: function(value) {
+
+            $scope.addRequestElement = function(wsdl) {
+                try {
+                    wsdl.showDialog = true;
+                    wsdl.showReqEle = true;
+                    wsdl.hasError = false;
+                    ngDialog.open(
+                        {
+                            template: 'requestElementDialog',
+                            className: 'ngdialog-theme-default',
+                            scope: $scope,
+                            overlay: true,
+                            controller: $controller('requestElementCtrl', {
+                                $scope: $scope,
+                                wsdl: wsdl
+                            }),
+                            closeByNavigation: true,
+                            preCloseCallback: function(value) {
+                            }
+                        });
+                } catch (err) {
+                    $log.error('Error while rendering request element window ', err);
+                    wsdl.hasError = true;
+                    wsdl.errorMsg = appConstants.SERVICE_ERROR;
                 }
-            });
-            
-        };
-     
-       $scope.addRequestMessage = function () {
-           
-       };
-       
-       $scope.addResponseMessage = function () {
-          
-       };
-       
-       $scope.generateWsdl = function () {
-           wsdlAPI.generateWSDL(me.wsdlRequestObj).then( function(data) {
-                $log.info(data);
-            });
-       };
-       
-}]);
+            };
+
+            $scope.addResponseElement = function(wsdl) {
+                try {
+                    wsdl.showDialog = true;
+                    wsdl.showResEle = true;
+                    wsdl.hasError = false;
+                    ngDialog.open(
+                        {
+                            template: 'responseElementDialog',
+                            className: 'ngdialog-theme-default',
+                            scope: $scope,
+                            overlay: true,
+                            controller: $controller('responseElementCtrl', {
+                                $scope: $scope,
+                                wsdl: wsdl
+                            }),
+                            closeByNavigation: true,
+                            preCloseCallback: function(value) {
+                            }
+                        });
+                } catch (err) {
+                    $log.error('Error while rendering response element window ', err);
+                    wsdl.hasError = true;
+                    wsdl.errorMsg = appConstants.SERVICE_ERROR;
+                }
+            };
+
+            $scope.addRequestMessage = function() {
+                try {
+                    wsdl.showDialog = true;
+                    wsdl.showReqMsg = true;
+                    wsdl.hasError = false;
+                    ngDialog.open(
+                        {
+                            template: 'requestMessageDialog',
+                            className: 'ngdialog-theme-default',
+                            scope: $scope,
+                            overlay: true,
+                            controller: $controller('requestMessageCtrl', {
+                                $scope: $scope,
+                                wsdl: wsdl
+                            }),
+                            closeByNavigation: true,
+                            preCloseCallback: function(value) {
+                            }
+                        });
+                } catch (err) {
+                    $log.error('Error while rendering request message window ', err);
+                    wsdl.hasError = true;
+                    wsdl.errorMsg = appConstants.SERVICE_ERROR;
+                }
+            };
+
+            $scope.addResponseMessage = function() {
+                try {
+                    wsdl.showDialog = true;
+                    wsdl.showResMsg = true;
+                    wsdl.hasError = false;
+                    ngDialog.open(
+                        {
+                            template: 'responseMessageDialog',
+                            className: 'ngdialog-theme-default',
+                            scope: $scope,
+                            overlay: true,
+                            controller: $controller('responseMessageCtrl', {
+                                $scope: $scope,
+                                wsdl: wsdl
+                            }),
+                            closeByNavigation: true,
+                            preCloseCallback: function(value) {
+                            }
+                        });
+                } catch (err) {
+                    $log.error('Error while rendering response message window ', err);
+                    wsdl.hasError = true;
+                    wsdl.errorMsg = appConstants.SERVICE_ERROR;
+                }
+            };
+
+            $scope.generateWsdl = function() {
+                var wsdlRequest = wsdlDataService.getWsdlRequest();
+                wsdlAPI.generateWSDL(wsdlRequest).then(function(data) {
+                    var f = new Blob([data], { type: 'text/wsdl' });
+                    FileSaver.saveAs(f, 'SOAP_WSDL.wsdl');
+                });
+            };
+
+        }]);

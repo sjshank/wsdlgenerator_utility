@@ -368,3 +368,216 @@ Error: Already at the last node
 [2016-04-05 22:56:55.668] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
 [2016-04-05 22:56:56.042] [DEBUG] createController - ******Create WSDL Starts******
 [2016-04-05 22:56:56.042] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 16:37:55.253] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 16:37:55.253] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 16:37:55.789] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 16:37:55.789] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 16:37:56.308] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 16:37:56.308] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 16:43:03.070] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 16:43:03.072] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 16:43:03.588] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 16:43:03.588] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 16:43:04.287] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 16:43:04.287] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 16:43:28.197] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 16:43:28.197] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 16:46:08.547] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 16:46:08.548] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 16:46:09.040] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 16:46:09.040] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 16:46:43.394] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 16:46:43.395] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 16:46:43.896] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 16:46:43.896] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 16:47:08.801] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 16:47:08.801] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 16:47:09.600] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 16:47:09.600] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 16:47:10.203] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 16:47:10.203] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 16:47:48.862] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 16:47:48.863] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 16:47:49.351] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 16:47:49.352] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 16:47:49.781] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 16:47:49.781] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 16:51:27.623] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 16:51:27.625] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 16:51:28.046] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 16:51:28.046] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 16:51:28.397] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 16:51:28.397] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 18:39:34.186] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 18:39:34.187] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 18:39:35.330] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 18:39:35.330] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 18:39:36.314] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 18:39:36.314] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 18:45:05.417] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 18:45:05.418] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 18:45:05.765] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 18:45:05.765] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 18:45:06.146] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 18:45:06.146] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 18:45:32.076] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 18:45:32.077] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 18:45:35.249] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 18:45:35.249] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 18:45:35.775] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 18:45:35.776] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 19:51:09.222] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 19:51:09.224] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 19:51:11.418] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 19:51:11.418] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 19:52:19.777] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 19:52:19.778] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 19:52:19.868] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 19:52:19.868] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 19:52:20.057] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 19:52:20.057] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 19:52:20.163] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 19:52:20.163] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 19:52:20.341] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 19:52:20.341] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 19:52:20.581] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 19:52:20.582] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 19:58:36.255] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 19:58:39.112] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 19:59:49.277] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 19:59:52.019] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:01:00.551] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:01:02.350] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:01:45.063] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:01:45.065] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:01:55.009] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:01:55.009] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:01:58.910] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:01:58.910] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:02:06.219] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:02:06.219] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:02:11.032] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:02:11.032] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:03:34.727] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:03:34.728] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:09:55.415] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:09:55.415] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:10:14.187] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:10:14.188] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:10:15.361] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:10:15.361] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:10:16.017] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:10:16.018] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:10:33.416] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:10:33.417] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:10:33.433] [ERROR] createController - Error while sending filestream  [TypeError: Cannot read property 'pipe' of undefined]
+TypeError: Cannot read property 'pipe' of undefined
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:48:47
+    at processImmediate [as _immediateCallback] (timers.js:371:17)
+From previous event:
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:45:34
+    at Object.exports.createWsdl (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\controllers\createController.js:54:20)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\server\config\router.js:11:20
+    at Layer.handle [as handle_request] (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+    at next (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:330:12)
+    at next (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:271:10)
+    at Function.handle (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:176:3)
+    at router (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:312:13)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:330:12)
+    at next (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\index.js:271:10)
+    at c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\app.js:28:5
+    at Layer.handle [as handle_request] (c:\Users\ss812960\Desktop\Nodejs\WSDL-Generator\node_modules\express\lib\router\layer.js:95:5)
+[2016-04-06 20:10:43.885] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:11:29.480] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:11:29.481] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:11:34.780] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:11:34.780] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:14:25.740] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:14:25.741] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:14:26.832] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:14:26.832] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:14:27.377] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:14:27.377] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:14:27.834] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:14:27.834] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:14:36.730] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:14:36.731] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:14:52.801] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:14:52.802] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:14:53.498] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:14:53.498] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:14:53.950] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:14:53.950] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:14:54.480] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:14:54.480] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:14:54.949] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:14:54.949] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:14:55.078] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:14:55.094] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:14:55.160] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:14:55.160] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:14:55.291] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:14:55.291] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:14:55.421] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:14:55.421] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:14:55.474] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:14:55.474] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:14:55.610] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:14:55.610] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:14:58.246] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:14:58.246] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:15:04.041] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:15:04.041] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:18:49.377] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:18:49.377] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:18:49.967] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:18:49.967] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:19:04.890] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:19:04.891] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:19:23.144] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:19:23.144] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:20:44.885] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:20:44.885] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:20:45.574] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:20:45.574] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 20:20:46.005] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 20:20:46.005] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 21:39:13.839] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 21:39:13.839] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 21:39:37.124] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 21:39:37.125] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 21:39:57.100] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 21:39:57.101] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 21:41:04.928] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 21:41:04.929] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 21:48:07.155] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 21:48:07.156] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-06 21:48:16.851] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-06 21:48:16.851] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-07 14:22:53.398] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-07 14:22:53.398] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-07 18:22:29.017] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-07 18:22:29.017] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-07 18:22:29.667] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-07 18:22:29.667] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-07 21:58:58.876] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-07 21:58:58.877] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-07 21:59:03.480] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-07 21:59:03.480] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-07 21:59:04.210] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-07 21:59:04.210] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-11 21:44:59.055] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-11 21:45:03.441] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-11 22:02:49.397] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-11 22:02:53.429] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-11 22:03:15.660] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-11 22:03:15.660] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******
+[2016-04-11 22:04:08.752] [DEBUG] createController - ******Create WSDL Starts******
+[2016-04-11 22:04:08.752] [DEBUG] xmlBuilderHelper - ******Build XML Doc Starts******

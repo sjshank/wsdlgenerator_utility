@@ -1,52 +1,73 @@
- 'use strict';
+'use strict';
 
 angular.module('wsdlApp')
- 
- .controller('requestElementCtrl', ['$scope', '$rootScope', 'ngDialog', 'wsdlDataService', 'wsdl', '$controller',
-                     function($scope, $rootScope, ngDialog, wsdlDataService, me, $controller) {
-                
-        $scope.addElement = function(){
-						var totalElements = me.wsdlObject.requestElement.elements.length;
-						me.wsdlObject.requestElement.elements.push(
-							{
-								input: "",
-								dataType: "String",
-                                id: 'input' + parseInt(totalElements + 1)
-							});
-						if(totalElements === 4){
-							me.elementLimit = true;
-						}
 
-				};
-                
-        $scope.removeElement = function(element){
-                        var index = -1;
-                        var l = me.wsdlObject.requestElement.elements.length;
-                        for(var i = 0; i <= l - 1; i++){
-                            if(me.wsdlObject.requestElement.elements[i]['id'] === element[0].id){
-                                index = i;
-                                break;
-                            }
+    .controller('requestElementCtrl', ['$scope', '$log', 'ngDialog', 'wsdlDataService', 'wsdl', 'appConstants',
+        function($scope, $log, ngDialog, wsdlDataService, wsdl, appConstants) {
+            wsdl.errorExist = false;
+            $scope.addElement = function(currentReqElement) {
+                try {
+                    wsdl.errorExist = false;
+                    var totalElements = parseInt(currentReqElement[0]['elements'].length);
+
+                    currentReqElement[0]['elements'].push(
+                        {
+                            input: "",
+                            dataType: "String",
+                            id: 'input' + parseInt(totalElements + 1)
+                        });
+                    if (totalElements === 4) {
+                        wsdl.elementLimit = true;
+                    }
+                } catch (err) {
+                    $log.error('Error while adding new element ', err);
+                    wsdl.errorExist = true;
+                    wsdl.errorMsg = appConstants.NEW_ELEMENT_ERR;
+                }
+            };
+
+            $scope.removeElement = function(currentReqElement) {
+                try {
+                    wsdl.errorExist = false;
+                    var index = -1;
+                    var l = wsdl.wsdlObject.requestElements.length;
+                    for (var i = 0; i <= l - 1; i++) {
+                        if (wsdl.wsdlObject.requestElements[i]['elements'][i]['id'] === currentReqElement[0]['elements'][0].id) {
+                            index = i;
+                            wsdl.wsdlObject.requestElements[i]['elements'].splice(index, 1);
+                            break;
                         }
-                        me.wsdlObject.requestElement.elements.splice( index, 1 );
-                        if(l < 5){
-                            me.elementLimit = false;
+                    }
+
+                    if (l < 5) {
+                        wsdl.elementLimit = false;
+                    }
+                } catch (err) {
+                    $log.error('Error while removing element ', err);
+                    wsdl.errorExist = true;
+                    wsdl.errorMsg = appConstants.DELETE_ELEMENT_ERR;
+                }
+            };
+
+            $scope.add = function() {
+                try {
+                    wsdl.errorExist = true;
+                    wsdlDataService.setWsdlRequest(wsdl.wsdlObject);
+                    if (wsdlDataService.getRequestEleLength() >= 1) {
+                        if (wsdl.wsdlObject.requestElements[0]['name'] !== '') {
+                            wsdl.disableResEle = false;
+                            wsdl.showReqEle = false;
+                        } else {
+                            wsdl.disableResEle = true;
                         }
-				};
-                
-         $scope.add = function(){
-                        wsdlDataService.setWsdlRequest(me.wsdlObject);
-                        if(wsdlDataService.getRequestEleLength() >= 1){
-                            if(me.wsdlObject.requestElement.elements[0]['name'] !== ''){
-                                me.disableResEle = false;
-                                me.showReqEle = false;
-                            }else{
-                                 me.disableResEle = true;
-                            }
-                        }else{
-                             me.disableResEle = true;
-                        }
-                        ngDialog.close();                     
-				};
-        
-}])
+                    } else {
+                        wsdl.disableResEle = true;
+                    }
+                    ngDialog.close();
+                } catch (err) {
+                    $log.error('Error while adding Request Element Object and closing window ', err);
+                    wsdl.errorExist = true;
+                    wsdl.errorMsg = appConstants.REQ_ELEMENT_ERR;
+                }
+            };
+        }])
