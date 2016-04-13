@@ -1,4 +1,4 @@
-# SOAP-WSDL Generator Web Portal
+# SOAP WSDL Generator Web Portal
 
 A MEAN Stack based web portal to generate draft version of SOAP-WSDL. Grab WSDL and save in your pocket.
 
