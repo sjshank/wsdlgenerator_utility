@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<wsdl:definitions name="BusinessService" targetNamespace="http://service.lfg.com/BusinessService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.lfg.com/BusinessService" xmlns:bons2="http://service.lfg.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<wsdl:definitions name="ababbab" targetNamespace="http://service.lfg.com/ababbab" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.lfg.com/ababbab" xmlns:bons2="http://service.lfg.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <wsdl:types>
-    <xsd:schema targetNamespace="http://service.lfg.com/BusinessService">
-      <xsd:element name="requestElementName">
+    <xsd:schema targetNamespace="http://service.lfg.com/ababbab">
+      <xsd:element name="ghhh">
         <xsd:complexType>
           <xsd:sequence>
-            <xsd:element name="variableName" type="xsd:Type"/>
-            <xsd:element name="variableName" type="xsd:Type"/>
+            <xsd:element name="hhhg" type="xsd:String"/>
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
-      <xsd:element name="responseElementName">
+      <xsd:element name="juyyuyu">
         <xsd:complexType>
           <xsd:sequence>
-            <xsd:element name="variableName" type="xsd:Type"/>
-            <xsd:element name="variableName" type="xsd:Type"/>
+            <xsd:element name="hghgh" type="xsd:String"/>
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
@@ -26,7 +24,7 @@
   <wsdl:message name="responseMessageName">
     <wsdl:part element="tns:responseElementName" name="parameters"/>
   </wsdl:message>
-  <wsdl:portType name="BusinessService">
+  <wsdl:portType name="ababbab">
     <wsdl:operation name="methodName">
       <wsdl:input name="tns:requestMessageName"/>
       <wsdl:output name="tns:responseMessageName"/>
@@ -36,10 +34,10 @@
       <wsdl:output name="tns:responseMessageName"/>
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="BusinessServiceSOAP" type="tns:BusinessService">
+  <wsdl:binding name="ababbabSOAP" type="tns:ababbab">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
     <wsdl:operation name="methodName">
-      <soap:operation soapAction="http://service.lfg.com/BusinessService/methodName"/>
+      <soap:operation soapAction="http://service.lfg.com/ababbab/methodName"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>
@@ -48,9 +46,9 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="BusinessService">
-    <wsdl:port binding="tns:BusinessServiceserviceNameSOAP" name="BusinessServiceSOAP">
-      <soap:address location="http://localhost:9080/service-root-context/BusinessService"/>
+  <wsdl:service name="ababbab">
+    <wsdl:port binding="tns:ababbabserviceNameSOAP" name="ababbabSOAP">
+      <soap:address location="http://localhost:9080/service-root-context/ababbab"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

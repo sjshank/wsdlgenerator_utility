@@ -36,8 +36,24 @@ angular.module('wsdlApp')
             responseMessages: [
                 {
                     id: 'resMsg1',
-                    name: '',
+                    messageName: '',
                     responseElement: { name: '', id: 'resEle1' }
+                }
+            ],
+            operations: [
+                {
+                    id: 'opertn1',
+                    methodName: '',
+                    requestMessage: { name: '', id: 'reqMsg1' },
+                    responseMessage: { name: '', id: 'resMsg1' }
+                }
+            ],
+            soapAddress: [
+                {
+                    id: 'soapAddr1',
+                    address: '',
+                    port: '',
+                    contextRoot: ''
                 }
             ]
         };

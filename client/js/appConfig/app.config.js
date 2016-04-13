@@ -28,4 +28,5 @@ angular
         rootScope.ELEMENT_NAME_ERR = "Please enter a valid input.";
         rootScope.REQ_MSG_NAME_ERR = "Please enter a valid SOAP Request Message.";
         rootScope.RES_MSG_NAME_ERR = "Please enter a valid SOAP Response Message.";
+        rootScope.METHOD_NAME_ERR = "Please enter a valid method name."
     }]);

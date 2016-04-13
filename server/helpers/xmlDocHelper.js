@@ -40,54 +40,103 @@ exports.buildXMLDoc = function(wsdlRequest) {
 
 function getWsdlTypesEle(xmlDoc, wsdlRequest) {
 
-    //It should be converted into dynamic based on request
-    var o = {
-        'xsd:element': {
-            '@name': "variableName",
-            '@type': "xsd:Type"
-        }
-    };
-    var b = {
-        'xsd:element': {
-            '@name': "variableName",
-            '@type': "xsd:Type"
-        }
-    };
-    var a = [o, b];
+    var requestArr = [],
+        responseArr = [];
+    
+    // Create request element tag    
+    for (var i = 0; i <= wsdlRequest.requestElements.length - 1; i++) {
+        const requestEle = wsdlRequest.requestElements[i],
+            elements = requestEle['elements'];
 
-    //It should be converted into dynamic based on request
-    var c = {
-        'xsd:element': {
-            '@name': "variableName",
-            '@type': "xsd:Type"
-        }
-    };
-    var d = {
-        'xsd:element': {
-            '@name': "variableName",
-            '@type': "xsd:Type"
-        }
-    };
-    var e = [c, d];
+        var eleArr = [];
+        for (var j = 0; j <= elements.length - 1; j++) {
+            const element = elements[j];
+            var type = "xsd:" + element['dataType'];
+            var input = element['input'];
 
+            eleArr.push({
+                    '@name': input,
+                    '@type': type
+            });
+        }
+        
+        const requestEleName = requestEle.name; 
+        requestArr.push({
+            'xsd:element': {
+                '@name': requestEleName,
+                'xsd:complexType': {
+                    'xsd:sequence': {
+                        'xsd:element': eleArr
+                    }
+                }
+            }
+        });
+    }
+    
+    // Create response element tag
+    for (var i = 0; i <= wsdlRequest.responseElements.length - 1; i++) {
+        const responseEle = wsdlRequest.responseElements[i],
+            elements = responseEle['elements'];
+
+        var eleArr = [];
+        for (var j = 0; j <= elements.length - 1; j++) {
+            const element = elements[j];
+            var type = "xsd:" + element['dataType'];
+            var output = element['output'];
+
+            eleArr.push({
+                    '@name': output,
+                    '@type': type
+            });
+        }
+        
+        const responseEleName = responseEle.name; 
+        responseArr.push({
+            'xsd:element': {
+                '@name': responseEleName,
+                'xsd:complexType': {
+                    'xsd:sequence': {
+                         'xsd:element': eleArr
+                    }   
+                }
+            }
+        });
+    }
 
     xmlDoc.ele(constants.WSDL_TYPES)
         .ele(constants.XSD_SCHEMA)
         .att('targetNamespace', wsdlRequest.targetNamespace)
-        .ele(constants.XSD_ELEMENT)
-        .att('name', 'requestElementName')
-        .ele(constants.XSD_COMPLEX_TYPE)
-        .ele(constants.XSD_SEQUENCE)
-        .ele(a).up().up().up().up()
-        .ele(constants.XSD_ELEMENT)
-        .att('name', 'responseElementName')
-        .ele(constants.XSD_COMPLEX_TYPE)
-        .ele(constants.XSD_SEQUENCE)
-        .ele(e).up();
+        .ele(requestArr).up()
+        .ele(responseArr).up();
 };
 
 
+
 function getWsdlMessageEle(xmlDoc, wsdlRequest) {
+    
+   /* var requestArr = [];
+    // Create request element tag    
+    for (var i = 0; i <= wsdlRequest.requestMessages.length - 1; i++) {
+        const requestMsg = wsdlRequest.requestMessages[i],
+            requestEle = requestMsg['requestElement'],
+            messageName = requestMsg['name'],
+            reqElementName = requestEle['name']['name'];
+
+        const requestEleName = requestEle.name; 
+        requestArr.push({
+            'WSDL_MESSAGE': {
+                '@name': messageName,
+                'wsdl:part': {
+                    '@element': messageName,
+                    '@name': messageName,
+                    }
+                }
+            }
+        });
+    }*/
+    
+    
+    
     //This comes under for loop based on I/O message paramters from user
     xmlDoc.ele(constants.WSDL_MESSAGE)
         .att('name', 'requestMessageName')
@@ -140,7 +189,7 @@ function getSoapBindingEle(xmlDoc, wsdlRequest) {
         'wsdl:operation': {
             '@name': "methodName",
             'soap:operation': {
-                '@soapAction': "http://service.lfg.com/" + wsdlRequest.serviceName +"/methodName"
+                '@soapAction': "http://service.lfg.com/" + wsdlRequest.serviceName + "/methodName"
             },
             'wsdl:input': {
                 'soap:body': {
@@ -159,7 +208,7 @@ function getSoapBindingEle(xmlDoc, wsdlRequest) {
 
     xmlDoc.ele(constants.WSDL_BINDING)
         .att('name', wsdlRequest.serviceName + 'SOAP')
-        .att('type', 'tns:'+wsdlRequest.serviceName)
+        .att('type', 'tns:' + wsdlRequest.serviceName)
         .ele(constants.SOAP_BINDING)
         .att('style', 'document')
         .att('transport', constants.TRANSPORT_URL).up()
@@ -170,8 +219,8 @@ function getSoapAddressEle(xmlDoc, wsdlRequest) {
     xmlDoc.ele(constants.WSDL_SERVICE)
         .att('name', wsdlRequest.serviceName)
         .ele(constants.WSDL_PORT)
-        .att('binding', 'tns:'+wsdlRequest.serviceName+'serviceNameSOAP')
-        .att('name', wsdlRequest.serviceName+'SOAP')
+        .att('binding', 'tns:' + wsdlRequest.serviceName + 'serviceNameSOAP')
+        .att('name', wsdlRequest.serviceName + 'SOAP')
         .ele(constants.SOAP_ADDRESS)
-        .att('location', constants.LOCATION_URL + 'service-root-context/'+wsdlRequest.serviceName).up()
+        .att('location', constants.LOCATION_URL + 'service-root-context/' + wsdlRequest.serviceName).up()
 };

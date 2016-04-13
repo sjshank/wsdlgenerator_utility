@@ -1,0 +1,33 @@
+<div ng-show="wsdl.showOperatn">
+    <!-- To display error operation -->
+    <div ng-cloak ng-if="wsdl.errorExist">
+        <br>
+        <ng-include src="'views/templates/error.tpl.html'"></ng-include>
+    </div>
+    
+    <form role='form' name='methodForm'>
+        <h2>Add Operation</h2>
+        <br>
+        <div ng-repeat="operation in wsdl.wsdlObject.operations">
+            <div class="form-control form-input-div" ng-class="{ 'hasError' : methodForm.{{operation.id}}.$invalid && !methodForm.{{operation.id}}.$pristine }">
+                <label class="form-input-text" >Method Name</label>
+                <input type="text" class="form-input-box form-control" name="{{operation.id}}" ng-model="operation.methodName" id="{{operation.id}}"
+                placeholder="Enter Name" ngvalidate-Alphanumeric >
+            </div>
+            <small class="errorTxt" ng-show="methodForm.{{operation.id}}.$dirty && methodForm.{{operation.id}}.$error.ngvalidateAlphanumeric">{{::METHOD_NAME_ERR }}</small>
+            <br><br>
+            <div class="form-control form-input-div">
+                <label class="form-input-text" >Map to SOAP Request Message</label>
+                <select class="float-left form-control form-input-box" ng-model="operation.requestMessageName" ng-options="v as v.messageName for v in wsdl.wsdlObject.requestMessages" required></select>
+            </div>
+            <br><br>
+            <div class="form-control form-input-div">
+                <label class="form-input-text" >Map to SOAP Response Message</label>
+                <select class="float-left form-control form-input-box" ng-model="operation.responseMessageName" ng-options="v as v.messageName for v in wsdl.wsdlObject.responseMessages" required></select>
+            </div>
+            <br>
+         </div>
+         <br>
+        <input type="submit" ng-click="add()" ng-disabled="operationForm.$invalid"  ng-hide="wsdl.wsdlObject.operations.length < 1" class="btn btn-primary" value="Add" id="add">
+    </form>
+</div>

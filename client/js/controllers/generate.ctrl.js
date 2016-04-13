@@ -14,12 +14,16 @@ angular.module('wsdlApp')
             wsdl.disableResEle = true;
             wsdl.disableReqMsg = true;
             wsdl.disableResMsg = true;
+            wsdl.disableSoapAddr = true;
+            wsdl.disableOperatn = true;
             wsdl.disableGenerate = true;
             wsdl.showDialog = false;
             wsdl.showReqEle = false;
             wsdl.showResEle = false;
             wsdl.showReqMsg = false;
             wsdl.showResMsg = false;
+            wsdl.showOperatn = false;
+            wsdl.showSoapAddr = false;
 
             var options = {
                 className: 'ngdialog-theme-default',
@@ -129,6 +133,44 @@ angular.module('wsdlApp')
                 }
             };
             
+            //Function for displaying Operation popup
+            $scope.addOperation = function() {
+                try {
+                    wsdl.showDialog = true;
+                    wsdl.showOperatn = true;
+                    wsdl.hasError = false;
+                    options.template = 'operationDialog';
+                    options.controller = $controller('operationCtrl', {
+                        $scope: $scope,
+                        wsdl: wsdl
+                    });
+                    ngDialog.open(options);
+                } catch (err) {
+                    $log.error('Error while rendering operation window ', err);
+                    wsdl.hasError = true;
+                    wsdl.errorMsg = appConstants.SERVICE_ERROR;
+                }
+            };
+            
+            //Function for displaying SOAP Address popup
+            $scope.addSoapAddress = function() {
+                try {
+                    wsdl.showDialog = true;
+                    wsdl.showSoapAddr = true;
+                    wsdl.hasError = false;
+                    options.template = 'soapAddrDialog';
+                    options.controller = $controller('soapAddressCtrl', {
+                        $scope: $scope,
+                        wsdl: wsdl
+                    });
+                    ngDialog.open(options);
+                } catch (err) {
+                    $log.error('Error while rendering soap address window ', err);
+                    wsdl.hasError = true;
+                    wsdl.errorMsg = appConstants.SERVICE_ERROR;
+                }
+            };
+            
             //Function for sending WSDL Request object and generating SOAP WSDL
             $scope.generateWsdl = function() {
                 try {
@@ -142,7 +184,7 @@ angular.module('wsdlApp')
                         else if (data && !data.errMsg) {
                             wsdl.hasError = false;
                             var f = new Blob([data], { type: 'text/wsdl' });
-                            FileSaver.saveAs(f, appConstants.FILE_NAME);
+                            FileSaver.saveAs(f, wsdlRequest.serviceName);
                         }
                         else{
                             wsdl.hasError = true;

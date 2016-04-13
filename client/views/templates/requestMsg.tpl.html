@@ -11,7 +11,7 @@
         <div ng-repeat="message in wsdl.wsdlObject.requestMessages">
             <div class="form-control form-input-div" ng-class="{ 'hasError' : messageForm.{{message.id}}.$invalid && !messageForm.{{message.id}}.$pristine }">
                 <label class="form-input-text" >Request Message Name</label>
-                <input type="text" class="form-input-box form-control" name="{{message.id}}" ng-model="message.name" id="{{message.id}}"
+                <input type="text" class="form-input-box form-control" name="{{message.id}}" ng-model="message.messageName" id="{{message.id}}"
                 placeholder="Enter Name" ngvalidate-Character >
             </div>
             <small class="errorTxt" ng-show="messageForm.{{message.id}}.$dirty && messageForm.{{message.id}}.$error.ngvalidateCharacter">{{::REQ_MSG_NAME_ERR }}</small>

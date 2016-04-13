@@ -13,7 +13,9 @@ angular.module('wsdlApp')
             addRequestElement: '&',
             addResponseElement: '&',
             addRequestMessage: '&',
-            addResponseMessage: '&'
+            addResponseMessage: '&',
+            addOperation: '&',
+            addSoapAddress: '&'
         },
         link: function(scope, element, attrs) {
 
@@ -87,4 +89,37 @@ angular.module('wsdlApp')
             scope.RES_MSG_NAME_ERR = scope.$root.RES_MSG_NAME_ERR;
         }
     }
+})
+
+//Directive for renering header and displaying active page
+.directive('operationTpl', function() {
+    return {
+        restrict: 'E',
+        replace: true,
+        templateUrl: 'views/templates/addOperation.tpl.html',
+        scope: {
+            wsdl: '=',
+            add: '&'
+        },
+        link: function(scope, element, attrs) {
+            scope.METHOD_NAME_ERR = scope.$root.METHOD_NAME_ERR;
+        }
+    }
+})
+
+//Directive for renering header and displaying active page
+.directive('soapAddrTpl', function() {
+    return {
+        restrict: 'E',
+        replace: true,
+        templateUrl: 'views/templates/soapAddr.tpl.html',
+        scope: {
+            wsdl: '=',
+            add: '&'
+        },
+        link: function(scope, element, attrs) {
+            scope.SOAP_ADDR_ERR = scope.$root.SOAP_ADDR_ERR;
+        }
+    }
 });
+
