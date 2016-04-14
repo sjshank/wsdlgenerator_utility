@@ -1,4 +1,5 @@
-var http = require('http');
+var http = require('http'),
+    chalk = require('chalk');
 var debug = require('debug')('WSDL-Generator');
 
 module.exports = function(app){
@@ -35,6 +36,13 @@ app.set('port', port);
 */
 var server = http.createServer(app);
 server.listen(port);
-console.log("server is listening on port 4000");
+    console.log(
+        chalk.red('\nExpress server listening on port ')
+        + chalk.yellow('%d')
+        + chalk.red(', in ')
+        + chalk.yellow('%s')
+        + chalk.red(' mode.\n'),
+        port
+    );
 
 }

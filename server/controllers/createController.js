@@ -8,17 +8,20 @@ const log4js = require('log4js'),
       log = log4js.getLogger("createController"),
       fs = require('fs'),
       constants = require('../utils/appConstants'),
-      xmlDocHelper = require('../helpers/xmlDocHelper'),
+      xmlDocHelper = require('../helpers/xmlDoc.helper.js'),
       xml2js = Promise.promisifyAll(require('xml2js')),
-      parseString = xml2js.parseStringAsync;
+      parseString = xml2js.parseStringAsync,
+      wsdlRequestService = require('../services/wsdlRequest.service.js')
       
 //generate wsdl
 exports.createWsdl = function(reqObject, resObject) {
     log.debug("******Create WSDL Starts******", reqObject.body);
+    const sName =  reqObject.body.serviceName,
+          wsdlRequest = reqObject.body;
     try{        
-                var wsdlRequest = reqObject.body;
+                wsdlRequestService.setWsdlRequest.call(null, wsdlRequest);
                 var getWSDLFile = function(){
-                      var result  = xmlDocHelper.buildXMLDoc(wsdlRequest);
+                      var result  = xmlDocHelper.buildXMLDoc();
                       return new Promise(function(resolve, reject){
                           parseString(result)
                             .then(function(jsonObj){
