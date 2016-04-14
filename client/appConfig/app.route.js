@@ -11,12 +11,12 @@ angular
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider
             .when('/home', {
-                templateUrl: 'views/home.html',
+                templateUrl: '../modules/home/home.html',
                 controller: 'homeCtrl',
                 controllerAs: 'me'
             })
             .when('/generate', {
-                templateUrl: 'views/generator.html',
+                templateUrl: '../modules/generate/generate.html',
                 controller: 'generateCtrl',
                 controllerAs: 'wsdl'
             })

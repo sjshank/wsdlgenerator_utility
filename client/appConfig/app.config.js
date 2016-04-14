@@ -9,8 +9,11 @@ angular
     .constant('appConstants', {
         SERVICE_ERROR: "Service is temporarily unavailable. Please try after sometime.",
         WSDL_GENERATE_ERR: "Failed to generate SOAP WSDL. Please try after sometime.",
-        SERVICE_NAME_REG_EX: /^[a-zA-Z]{3,30}$/i,
+        SERVICE_NAME_REG_EX: /^[a-zA-Z_\-]{3,30}$/i,
         ALPHA_NUMERIC_REG_EX: /^[a-z0-9]{3,30}$/i,
+        PORT_REG_EX: /^[0-9]{2,4}$/i,
+        LOCATION_REG_EX: /^[a-zA-Z0-9\.\-]{4,30}$/i,
+        CONTEXT_REG_EX: /^[a-zA-Z0-9\-]{4,30}$/i,
         RES_ELEMENT_ERR: "Failed to Response Elements. Please try again.",
         REQ_ELEMENT_ERR: "Failed to Request Elements. Please try again.",
         DELETE_ELEMENT_ERR: "Failed to Delete Element. Please try again.",
@@ -28,5 +31,8 @@ angular
         rootScope.ELEMENT_NAME_ERR = "Please enter a valid input.";
         rootScope.REQ_MSG_NAME_ERR = "Please enter a valid SOAP Request Message.";
         rootScope.RES_MSG_NAME_ERR = "Please enter a valid SOAP Response Message.";
-        rootScope.METHOD_NAME_ERR = "Please enter a valid method name."
+        rootScope.METHOD_NAME_ERR = "Please enter a valid method name.";
+        rootScope.LOCATION_ERR = "Please enter a valid address.",
+        rootScope.PORT_ERR = "Please enter a valid location port.",
+        rootScope.CONTEXT_ROOT_ERR = "Please enter a valid context root."
     }]);

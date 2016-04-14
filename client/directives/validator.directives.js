@@ -22,7 +22,40 @@ angular.module('wsdlApp')
                 validateInput('ngvalidateAlphanumeric', appConstant.ALPHA_NUMERIC_REG_EX, ngModel);
             }
         };
-    }]);
+    }])
+
+    //Directive for validating alphabet inputs
+    .directive("ngvalidatePort", ['$log', 'appConstants', function($log, appConstant) {
+        return {
+            restrict: "A",
+            require: "?ngModel",
+            link: function(scope, element, attributes, ngModel) {
+                validateInput('ngvalidatePort', appConstant.PORT_REG_EX, ngModel);
+            }
+        };
+    }])
+    
+    //Directive for validating alphabet inputs
+    .directive("ngvalidateContextroot", ['$log', 'appConstants', function($log, appConstant) {
+        return {
+            restrict: "A",
+            require: "?ngModel",
+            link: function(scope, element, attributes, ngModel) {
+                validateInput('ngvalidateContextroot', appConstant.CONTEXT_REG_EX, ngModel);
+            }
+        };
+    }])
+    
+    //Directive for validating alphabet inputs
+    .directive("ngvalidateLocation", ['$log', 'appConstants', function($log, appConstant) {
+        return {
+            restrict: "A",
+            require: "?ngModel",
+            link: function(scope, element, attributes, ngModel) {
+                validateInput('ngvalidateLocation', appConstant.LOCATION_REG_EX, ngModel);
+            }
+        };
+    }])
 
 function validateInput(dirName, regEx, ngModel) {
     try {

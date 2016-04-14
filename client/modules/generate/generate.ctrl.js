@@ -184,7 +184,7 @@ angular.module('wsdlApp')
                         else if (data && !data.errMsg) {
                             wsdl.hasError = false;
                             var f = new Blob([data], { type: 'text/wsdl' });
-                            FileSaver.saveAs(f, wsdlRequest.serviceName);
+                            FileSaver.saveAs(f, wsdlRequest.serviceName + '.wsdl');
                         }
                         else{
                             wsdl.hasError = true;

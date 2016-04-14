@@ -48,14 +48,12 @@ angular.module('wsdlApp')
                     responseMessage: { name: '', id: 'resMsg1' }
                 }
             ],
-            soapAddress: [
-                {
+            soapAddress: {
                     id: 'soapAddr1',
                     address: '',
                     port: '',
                     contextRoot: ''
                 }
-            ]
         };
 
         var _wsdl = {};

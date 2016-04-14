@@ -6,7 +6,7 @@ angular.module('wsdlApp')
 .directive('appHeader', function() {
     return {
         restrict: 'E',
-        templateUrl: 'views/templates/header.tpl.html',
+        templateUrl: '../views/header.tpl.html',
         scope: {
             selected: '@'
         },
@@ -20,7 +20,7 @@ angular.module('wsdlApp')
 .directive('appFooter', function() {
     return {
         restrict: 'E',
-        templateUrl: 'views/templates/footer.tpl.html',
+        templateUrl: '../views/footer.tpl.html',
         link: function(scope, element, attrs) {
 
         }

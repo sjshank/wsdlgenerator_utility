@@ -4,11 +4,11 @@
 
     <!-- To display error message -->
     <div ng-cloak ng-if="wsdl.hasError">
-        <ng-include src="'views/templates/error.tpl.html'"></ng-include>
+        <ng-include src="'./../views/templates/error.tpl.html'"></ng-include>
     </div>
 
     <div ng-hide="wsdl.showDialog">
-        <ng-include src="'views/dialog.html'"></ng-include>
+        <ng-include src="'modules/generate/dialog.html'"></ng-include>
     </div>
 
     <div class="row form-div">

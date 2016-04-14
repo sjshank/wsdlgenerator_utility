@@ -7,7 +7,7 @@ angular.module('wsdlApp')
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: 'views/templates/buttons.tpl.html',
+        templateUrl: '../modules/generate/buttons.tpl.html',
         scope: {
             wsdl: '=',
             addRequestElement: '&',
@@ -28,7 +28,7 @@ angular.module('wsdlApp')
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: 'views/templates/requestEle.tpl.html',
+        templateUrl: '../modules/requestElement/requestEle.tpl.html',
         scope: {
             wsdl: '=',
             addElement: '&',
@@ -47,7 +47,7 @@ angular.module('wsdlApp')
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: 'views/templates/responseEle.tpl.html',
+        templateUrl: '../modules/responseElement/responseEle.tpl.html',
         scope: {
             wsdl: '=',
             add: '&'
@@ -64,7 +64,7 @@ angular.module('wsdlApp')
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: 'views/templates/requestMsg.tpl.html',
+        templateUrl: '../modules/requestMessage/requestMsg.tpl.html',
         scope: {
             wsdl: '=',
             add: '&'
@@ -80,7 +80,7 @@ angular.module('wsdlApp')
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: 'views/templates/responseMsg.tpl.html',
+        templateUrl: '../modules/responseMessage/responseMsg.tpl.html',
         scope: {
             wsdl: '=',
             add: '&'
@@ -96,7 +96,7 @@ angular.module('wsdlApp')
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: 'views/templates/addOperation.tpl.html',
+        templateUrl: '../modules/operation/addOperation.tpl.html',
         scope: {
             wsdl: '=',
             add: '&'
@@ -112,13 +112,15 @@ angular.module('wsdlApp')
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: 'views/templates/soapAddr.tpl.html',
+        templateUrl: '../modules/soapAddress/soapAddr.tpl.html',
         scope: {
             wsdl: '=',
             add: '&'
         },
         link: function(scope, element, attrs) {
-            scope.SOAP_ADDR_ERR = scope.$root.SOAP_ADDR_ERR;
+            scope.LOCATION_ERR = scope.$root.LOCATION_ERR;
+            scope.PORT_ERR = scope.$root.PORT_ERR;
+            scope.CONTEXT_ROOT_ERR = scope.$root.CONTEXT_ROOT_ERR;
         }
     }
 });

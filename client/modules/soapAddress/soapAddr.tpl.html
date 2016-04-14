@@ -1,0 +1,43 @@
+<div ng-show="wsdl.showOperatn">
+    <!-- To display error operation -->
+    <div ng-cloak ng-if="wsdl.errorExist">
+        <br>
+        <ng-include src="'./../views/templates/error.tpl.html'"></ng-include>
+    </div>
+    
+    <form role='form' name='soapForm'>
+        <h2>Add SOAP Address</h2>
+        <br>
+        <div>
+            <div class="form-control form-input-div" ng-class="{ 'hasError' : soapForm.address.$invalid && !soapForm.address.$pristine }">
+                <label class="form-input-text" >SOAP Location Address</label>
+                <input type="text" class="form-input-box form-control" name="address" ng-model="wsdl.wsdlObject.soapAddress.address" id="address"
+                placeholder="Enter Location" ngvalidate-location>
+            </div>
+            <small><i>For Example: localhost</i></small>
+            <small style='margin-left: 50px;' class="errorTxt" ng-show="soapForm.address.$dirty && soapForm.address.$error.ngvalidateLocation">{{::LOCATION_ERR }}</small>
+            <br><br>
+            
+            <div class="form-control form-input-div" ng-class="{ 'hasError' : soapForm.port.$invalid && !soapForm.port.$pristine }">
+                <label class="form-input-text" >SOAP Location Port</label>
+                <input type="text" class="form-input-box form-control" name="port" ng-model="wsdl.wsdlObject.soapAddress.port" id="port"
+                placeholder="Enter Port" ngvalidate-port>   
+            </div>
+            <small><i>For Example: 9080</i></small>
+            <small style='margin-left: 41px;' class="errorTxt" ng-show="soapForm.port.$dirty && soapForm.port.$error.ngvalidatePort">{{::PORT_ERR }}</small>
+            <br><br>
+            
+            <div class="form-control form-input-div" ng-class="{ 'hasError' : soapForm.root.$invalid && !soapForm.root.$pristine }">
+                <label class="form-input-text" >Service Context Root</label>
+                <input type="text" class="form-input-box form-control" name="root" ng-model="wsdl.wsdlObject.soapAddress.contextRoot" id="root"
+                placeholder="Enter Context Root " ngvalidate-contextroot>
+            </div>
+            <small><i>For Example: sample-service-war</i></small>
+            <small style='margin-left: 10px;' class="errorTxt" ng-show="soapForm.root.$dirty && soapForm.root.$error.ngvalidateContextroot">{{::CONTEXT_ROOT_ERR }}</small>
+            <br><br>
+           
+         </div>
+         
+        <input type="submit" ng-click="add()" ng-disabled="soapForm.$invalid"  class="btn btn-primary" value="Add" id="add">
+    </form>
+</div>
