@@ -23,6 +23,17 @@ angular.module('wsdlApp')
             }
         };
     }])
+    
+    //Directive for validating target namespace
+    .directive("ngvalidateTargetNamespace", ['$log', 'appConstants', function($log, appConstant) {
+        return {
+            restrict: "A",
+            require: "?ngModel",
+            link: function(scope, element, attributes, ngModel) {
+                validateInput('ngvalidateTargetNamespace', appConstant.TARGET_NAMESPACE_REG_EX, ngModel);
+            }
+        };
+    }])
 
     //Directive for validating alphabet inputs
     .directive("ngvalidatePort", ['$log', 'appConstants', function($log, appConstant) {

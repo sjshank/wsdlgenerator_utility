@@ -42,18 +42,16 @@ angular.module('wsdlApp')
             }
 
 
-            //watch function for serviceName.
-            $scope.$watch('wsdl.wsdlObject.serviceName', function(newValue, oldValue, scope) {
+            //watch function for targetNamespace.
+            $scope.$watch('wsdl.wsdlObject.targetNamespace', function(newValue, oldValue, scope) {
                 try {
                     if (typeof newValue !== 'undefined' && newValue !== "" && newValue !== oldValue) {
-                        wsdl.wsdlObject.targetNamespace = 'http://service.lfg.com/' + wsdl.wsdlObject.serviceName;
                         wsdl.disableReqEle = false;
                     } else {
-                        wsdl.wsdlObject.targetNamespace = 'http://service.lfg.com/';
                         wsdl.disableReqEle = true;
                     }
                 } catch (err) {
-                    $log.error('Error while watching serviceName scope object', err);
+                    $log.error('Error while watching targetNamespace scope object', err);
                 }
             });
 

@@ -3,7 +3,7 @@
     <!-- To display error message -->
     <div ng-cloak ng-if="wsdl.errorExist">
         <br>
-        <ng-include src="'./../views/templates/error.tpl.html'"></ng-include>
+        <ng-include src="'errorTemplate.html'"></ng-include>
     </div>
     
     <form role='form' name='elementForm'>
@@ -32,7 +32,7 @@
 
                 <div class="float-left">
                     <select class="float-left form-control data-type-options" ng-model="element.dataType" ng-options="v for v in wsdl.dataTypes"></select>
-                    <button type="button" ng-click="removeElement(reqElement)" class="delete-icon btn btn-sm btn-danger">
+                    <button ng-hide="$index < 1" type="button" ng-click="removeElement(reqElement)" class="delete-icon btn btn-sm btn-danger">
                         <i class="glyphicon glyphicon-remove">
                             </i>
                     </button>

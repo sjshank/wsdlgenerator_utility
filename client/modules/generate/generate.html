@@ -4,7 +4,7 @@
 
     <!-- To display error message -->
     <div ng-cloak ng-if="wsdl.hasError">
-        <ng-include src="'./../views/templates/error.tpl.html'"></ng-include>
+        <ng-include src="'errorTemplate.html'"></ng-include>
     </div>
 
     <div ng-hide="wsdl.showDialog">
@@ -26,14 +26,18 @@
                 <small class="error-label errorTxt" ng-if="wsdlForm.serviceName.$dirty && wsdlForm.serviceName.$error.ngvalidateCharacter">{{::SERVICE_NAME_ERR }}</small>
                 <br>
                 <br>
-                <div class="form-control form-input-div">
+                <div class="form-control form-input-div" ng-class="{ 'hasError' : wsdlForm.targetNamespace.$invalid && !wsdlForm.targetNamespace.$pristine }">
                     <label class="form-input-text" for="targetNamespace">Target Namespace</label>
                     <div class="input-group">
-                        <input type="text" class="form-input-box form-control readonlyClass" readonly id="targetNamespace" name="targetNamespace"
-                        ng-model="wsdl.wsdlObject.targetNamespace">
+                        <input type="text" class="form-input-box form-control " id="targetNamespace" name="targetNamespace" placeholder="Enter Target Namespace"
+                        ng-model="wsdl.wsdlObject.targetNamespace" ngvalidate-target-namespace>
                     </div>
                 </div>
+                <small class="float-left"><i>For Example: http://www.examples.com/HelloWorldService</i></small>
                 <br>
+                <small  class="float-left errorTxt" ng-show="wsdlForm.targetNamespace.$dirty && wsdlForm.targetNamespace.$error.ngvalidateTargetNamespace">{{::TARGET_NAMESPACE_ERR }}</small>
+                <br><br>
+
                 <ngbutton-template wsdl="wsdl" add-request-element="addRequestElement(wsdl)" add-response-element="addResponseElement(wsdl)" add-request-message="addRequestMessage(wsdl)"
                 add-response-message="addResponseMessage(wsdl)" add-operation="addOperation(wsdl)" add-soap-address="addSoapAddress(wsdl)"></ngbutton-template>
             </form>

@@ -7,7 +7,7 @@ angular.module('wsdlApp')
     function() {
         var _init = {
             serviceName: '',
-            targetNamespace: 'http://service.lfg.com/',
+            targetNamespace: '',
             requestElements: [
                 {
                     id: 'reqEle1',

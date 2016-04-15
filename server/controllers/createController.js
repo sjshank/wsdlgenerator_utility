@@ -11,15 +11,17 @@ const log4js = require('log4js'),
       xmlDocHelper = require('../helpers/xmlDoc.helper.js'),
       xml2js = Promise.promisifyAll(require('xml2js')),
       parseString = xml2js.parseStringAsync,
-      wsdlRequestService = require('../services/wsdlRequest.service.js')
+      wsdlRequestService = require('../services/wsdlRequest.service.js');
       
 //generate wsdl
 exports.createWsdl = function(reqObject, resObject) {
     log.debug("******Create WSDL Starts******", reqObject.body);
-    const sName =  reqObject.body.serviceName,
-          wsdlRequest = reqObject.body;
+    
+
     try{        
-                wsdlRequestService.setWsdlRequest.call(null, wsdlRequest);
+                const sName =  reqObject.body.serviceName,
+                      wsdlRequest = reqObject.body;
+                wsdlRequestService.setWsdlRequest.call(null, wsdRequest);
                 var getWSDLFile = function(){
                       var result  = xmlDocHelper.buildXMLDoc();
                       return new Promise(function(resolve, reject){
@@ -32,7 +34,7 @@ exports.createWsdl = function(reqObject, resObject) {
                                 return fs.writeFile(constants.WSDL_FILE_LOC, xmlContent);        
                             })
                             .then(function(f){
-                                return fs.FileReadStream(constants.WSDL_FILE_LOC);     
+                                return fs.ReadStream(constants.WSDL_FILE_LOC);     
                             })
                             .then(function(fileStream){
                                 resolve(fileStream);
@@ -45,16 +47,17 @@ exports.createWsdl = function(reqObject, resObject) {
                 };
                         
                  (function(){
-                            getWSDLFile()
-                                .then(function(fileStream){
-                                    resObject.setHeader('Content-disposition', 'attachment; filename=' + constants.FILENAME);
-                                    resObject.setHeader('Content-type', "text/wsdl");  
-                                    fileStream.pipe(resObject);
-                                })
-                                .catch(function(err){
-                                    log.error("Error while sending filestream ", err);
-                                    resObject.json({errMsg : constants.WSDL_GENERATE_FAILED});
-                                });
+                     
+                                getWSDLFile()
+                                    .then(function(fileStream){
+                                        resObject.setHeader('Content-disposition', 'attachment; filename=' + constants.FILENAME);
+                                        resObject.setHeader('Content-type', "text/wsdl");  
+                                        fileStream.pipe(resObject);
+                                    })
+                                    .catch(function(err){
+                                        log.error("Error while sending filestream ", err);
+                                        resObject.json({errMsg : constants.WSDL_GENERATE_FAILED});
+                                    });
                  })();
    
     }catch(err){

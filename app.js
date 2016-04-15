@@ -35,10 +35,6 @@ app.get('/',function(req, res){
 
 app.use('/api', route);
 
-//Render landing page
-app.use('*',function(req, res){
-    res.sendFile(__dirname + '/server/views/landingPage.html');
-});
 
 /*
 *	Error Handler. Development error handler.
