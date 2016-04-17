@@ -2,6 +2,16 @@
 
 angular.module('wsdlApp')
 
+.directive("ngvalidateEmployee", ['$log', 'appConstants', function($log, appConstant) {
+        return {
+            restrict: "A",
+            require: "?ngModel",
+            link: function(scope, element, attributes, ngModel) {
+                validateInput('ngvalidateEmployee', appConstant.EMPLOYEE_REG_EX, ngModel);
+            }
+        };
+    }])
+
     //Directive for validating alphabet inputs
     .directive("ngvalidateCharacter", ['$log', 'appConstants', function($log, appConstant) {
         return {

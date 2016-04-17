@@ -3,9 +3,9 @@
 angular.module('wsdlApp')
 
     .controller('generateCtrl', ['$scope', '$rootScope', '$log', 'wsdlAPI', 'appConstants', 'ngDialog',
-        'wsdlDataService', '$controller', 'FileSaver', 'Blob',
+        'wsdlDataService', '$controller', 'FileSaver', 'Blob', '$window',
         function($scope, $rootScope, $log, wsdlAPI, appConstants, ngDialog,
-            wsdlDataService, $controller, FileSaver, Blob) {
+            wsdlDataService, $controller, FileSaver, Blob, $window) {
 
             var wsdl = this;
             wsdl.hasError = false;
@@ -30,7 +30,9 @@ angular.module('wsdlApp')
                 scope: $scope,
                 overlay: true,
                 closeByNavigation: true,
-                preCloseCallback: function(value) { }
+                preCloseCallback: function(value) {
+                    
+                 }
             }
 
             //Initialize wsdl request object
@@ -173,6 +175,9 @@ angular.module('wsdlApp')
             $scope.generateWsdl = function() {
                 try {
                     var wsdlRequest = wsdlDataService.getWsdlRequest();
+                    var d  = new Date();
+                    wsdlRequest.created_at = d.toDateString();
+                    wsdlRequest.created_by = $window.guest;
                     wsdlAPI.generateWSDL(wsdlRequest).then(function(data) {
                         if (data && data.errMsg) {
                             wsdl.hasError = true;

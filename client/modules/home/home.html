@@ -6,9 +6,20 @@
         <section class="header-section">
             <h1>WSDL Generator Portal</h1>
             <p>{{:: subHeading}}</p>
-            <p>
-                <a class="btn btn-lg btn-primary" href="#/generate" role="button">Lets get started &raquo;</a>
-            </p>
+            <div class="">
+                <br>
+                <form role="form" name="homeForm">
+                    <input type="text" class="guest-input-box float-left form-control" name="employee" ng-model="me.employee" id="employee"
+                        placeholder="Enter employee number" ngvalidate-employee
+                        ng-class="{ 'hasError' : homeForm.employee.$invalid && !homeForm.employee.$pristine }">
+                    <button type="button" ng-disabled="homeForm.$invalid" ng-click="redirect(me)" class="float-left btn btn-md btn-primary">
+                            And lets get started &raquo;
+                    </button>
+                    <div class="clear-both"></div>
+                    <small class="float-left error-label errorTxt" ng-if="homeForm.employee.$dirty && homeForm.employee.$error.ngvalidateEmployee">{{::EMPLOYEE_NAME_ERR }}</small>
+                </form>
+            </div>
+            
         </section>
     </div>
     

@@ -22,7 +22,7 @@ module.exports = function(grunt) {
           ieCompat : true    // Enforce the CSS output is compatible with Internet Explorer 8.
         },
         files : {
-          "client/css/style.css" : "client/css/style.less"  // destination file and source file
+          "client/asset/style.css" : "client/asset/style.less"  // destination file and source file
         }
       }
     }

@@ -13,24 +13,23 @@ const log4js = require('log4js'),
 exports.buildXMLDoc = function() {
     try {
         log.debug("******Build XML Doc Starts******");
-        
-        var xmlDoc = builder.create(constants.ROOT, { 'version': '1.0', 'encoding': 'UTF-8' })
-            .att("name", wsdlRequestModel.serviceName) //Replace with servicename
-            .att("targetNamespace", wsdlRequestModel.targetNamespace) //Replace with targetnamespace
-            .att('xmlns:wsdl', constants.XMLNS_WSDL)
-            .att('xmlns:soap', constants.XMLNS_SOAP)
-            .att('xmlns:tns', constants.XMLNS_TNS + wsdlRequestModel.serviceName)
-            .att('xmlns:bons2', constants.XMLNS_BONS2)
-            .att('xmlns:xsd', constants.XMLNS_XSD);
+                var xmlDoc = builder.create(constants.ROOT, { 'version': '1.0', 'encoding': 'UTF-8' })
+                    .att("name", wsdlRequestModel.serviceName) //Replace with servicename
+                    .att("targetNamespace", wsdlRequestModel.targetNamespace) //Replace with targetnamespace
+                    .att('xmlns:wsdl', constants.XMLNS_WSDL)
+                    .att('xmlns:soap', constants.XMLNS_SOAP)
+                    .att('xmlns:tns', constants.XMLNS_TNS + wsdlRequestModel.serviceName)
+                    .att('xmlns:bons2', constants.XMLNS_BONS2)
+                    .att('xmlns:xsd', constants.XMLNS_XSD);
 
-        getWsdlTypesEle(xmlDoc);
-        getWsdlMessageEle(xmlDoc);
-        getPortTypeEle(xmlDoc);
-        getSoapBindingEle(xmlDoc);
-        getSoapAddressEle(xmlDoc);
+                getWsdlTypesEle(xmlDoc);
+                getWsdlMessageEle(xmlDoc);
+                getPortTypeEle(xmlDoc);
+                getSoapBindingEle(xmlDoc);
+                getSoapAddressEle(xmlDoc);
 
-        log.debug("******XML DOC******", xmlDoc.toString());
-        return xmlDoc.toString();
+                log.debug("******XML DOC******", xmlDoc.toString());
+                return xmlDoc.toString();
     } catch (err) {
         log.error("Error while building XML doc in xmlDocHelper  ", err);
         throw err;
@@ -45,8 +44,6 @@ function getWsdlTypesEle(xmlDoc) {
         .ele(wsdlRequestModel.requestElements).up()
         .ele(wsdlRequestModel.responseElements).up();
 };
-
-
 
 function getWsdlMessageEle(xmlDoc) {
 

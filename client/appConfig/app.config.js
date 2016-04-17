@@ -15,6 +15,7 @@ angular
         PORT_REG_EX: /^[0-9]{2,4}$/i,
         LOCATION_REG_EX: /^[a-zA-Z0-9\.\-]{4,30}$/i,
         CONTEXT_REG_EX: /^[a-zA-Z0-9\-]{4,30}$/i,
+        EMPLOYEE_REG_EX : /[0-9]{3,7}$/,
         RES_ELEMENT_ERR: "Failed to Response Elements. Please try again.",
         REQ_ELEMENT_ERR: "Failed to Request Elements. Please try again.",
         DELETE_ELEMENT_ERR: "Failed to Delete Element. Please try again.",
@@ -24,7 +25,7 @@ angular
         DATA_TYPES: ['String', 'Integer', 'Boolean'],
         FILE_NAME: 'SOAP_WSDL.wsdl'
     })
-    .run(['$rootScope', '$templateCache', function(rootScope, $templateCache) {
+    .run(['$rootScope', '$templateCache',  function(rootScope, $templateCache) {
         rootScope.subHeading = "A MEAN Stack based web portal to generate draft version of SOAP-WSDL. Grab WSDL and save in your pocket.";
         rootScope.SERVICE_NAME_ERR = "Please enter a valid service name.";
         rootScope.TARGET_NAMESPACE_ERR = "Please enter a valid target namespace."
@@ -36,6 +37,7 @@ angular
         rootScope.METHOD_NAME_ERR = "Please enter a valid method name.";
         rootScope.LOCATION_ERR = "Please enter a valid address.",
         rootScope.PORT_ERR = "Please enter a valid location port.",
-        rootScope.CONTEXT_ROOT_ERR = "Please enter a valid context root."
+        rootScope.CONTEXT_ROOT_ERR = "Please enter a valid context root.",
+        rootScope.EMPLOYEE_NAME_ERR = "Please enter a valid employee number."
         $templateCache.put('errorTemplate.html', '<div class="alert alert-danger">{{wsdl.errorMsg}}</div>');
     }]);
