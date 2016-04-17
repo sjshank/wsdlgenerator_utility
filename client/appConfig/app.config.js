@@ -15,7 +15,7 @@ angular
         PORT_REG_EX: /^[0-9]{2,4}$/i,
         LOCATION_REG_EX: /^[a-zA-Z0-9\.\-]{4,30}$/i,
         CONTEXT_REG_EX: /^[a-zA-Z0-9\-]{4,30}$/i,
-        EMPLOYEE_REG_EX : /[0-9]{3,7}$/,
+        EMPLOYEE_REG_EX : /^[0-9]{3,7}$/,
         RES_ELEMENT_ERR: "Failed to Response Elements. Please try again.",
         REQ_ELEMENT_ERR: "Failed to Request Elements. Please try again.",
         DELETE_ELEMENT_ERR: "Failed to Delete Element. Please try again.",
