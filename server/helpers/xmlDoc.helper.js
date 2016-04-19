@@ -37,7 +37,7 @@ exports.buildXMLDoc = function() {
 };
 
 function getWsdlTypesEle(xmlDoc) {
-
+   
     xmlDoc.ele(constants.WSDL_TYPES)
         .ele(constants.XSD_SCHEMA)
         .att('targetNamespace', wsdlRequestModel.targetNamespace)

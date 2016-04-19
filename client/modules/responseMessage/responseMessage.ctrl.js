@@ -10,7 +10,7 @@ angular.module('wsdlApp')
                 try {
                     wsdl.errorExist = false;
                     wsdlDataService.setWsdlRequest(wsdl.wsdlObject);
-                    wsdl.disableOperatn = false;
+                    wsdl.disableOperatn = true;
                     ngDialog.close();
                 } catch (err) {
                     $log.error('Error while adding Request Message Object and closing window ', err);

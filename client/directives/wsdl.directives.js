@@ -50,6 +50,8 @@ angular.module('wsdlApp')
         templateUrl: '../modules/responseElement/responseEle.tpl.html',
         scope: {
             wsdl: '=',
+            addElement: '&',
+            removeElement: '&',
             add: '&'
         },
         link: function(scope, element, attrs) {

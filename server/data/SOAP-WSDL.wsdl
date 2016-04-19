@@ -1,40 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<wsdl:definitions name="SampleBusinessService" targetNamespace="http://service.lfg.com/SampleBusinessService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.lfg.com/SampleBusinessService" xmlns:bons2="http://service.lfg.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<wsdl:definitions name="BusinessService" targetNamespace="http://service.lfg.com/BusinessService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.lfg.com/BusinessService" xmlns:bons2="http://service.lfg.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <wsdl:types>
-    <xsd:schema targetNamespace="http://service.lfg.com/SampleBusinessService">
-      <xsd:element name="getSum">
+    <xsd:schema targetNamespace="http://service.lfg.com/BusinessService">
+      <xsd:element name="RequestElementName">
         <xsd:complexType>
           <xsd:sequence>
-            <xsd:element name="variabl1" type="xsd:Integer"/>
-            <xsd:element name="variabl1" type="xsd:Integer"/>
+            <xsd:element name="Input" type="xsd:String"/>
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
-      <xsd:element name="getResult">
+      <xsd:element name="responseElementName">
         <xsd:complexType>
           <xsd:sequence>
-            <xsd:element name="ouput" type="xsd:Integer"/>
+            <xsd:element name="output" type="xsd:String"/>
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="sumRequestMessage">
-    <wsdl:part element="tns:getSum" name="parameters"/>
+  <wsdl:message name="reqMessage">
+    <wsdl:part element="tns:RequestElementName" name="parameters"/>
   </wsdl:message>
-  <wsdl:message name="sumResponseMessage">
-    <wsdl:part element="tns:getResult" name="parameters"/>
+  <wsdl:message name="resMsg">
+    <wsdl:part element="tns:responseElementName" name="parameters"/>
   </wsdl:message>
-  <wsdl:portType name="SampleBusinessService">
+  <wsdl:portType name="BusinessService">
     <wsdl:operation name="doSum">
-      <wsdl:input name="tns:sumRequestMessage"/>
-      <wsdl:output name="tns:sumResponseMessage"/>
+      <wsdl:input name="tns:reqMessage"/>
+      <wsdl:output name="tns:resMsg"/>
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="SampleBusinessServiceSOAP" type="tns:SampleBusinessService">
+  <wsdl:binding name="BusinessServiceSOAP" type="tns:BusinessService">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
     <wsdl:operation name="doSum">
-      <soap:operation soapAction="http://service.lfg.com/SampleBusinessService/doSum"/>
+      <soap:operation soapAction="http://service.lfg.com/BusinessService/doSum"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>
@@ -43,9 +42,9 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="SampleBusinessService">
-    <wsdl:port binding="tns:SampleBusinessServiceSOAP" name="SampleBusinessServiceSOAP">
-      <soap:address location="http://localhost:9080/sampleService/SampleBusinessService"/>
+  <wsdl:service name="BusinessService">
+    <wsdl:port binding="tns:BusinessServiceSOAP" name="BusinessServiceSOAP">
+      <soap:address location="http://localhost:9081/calculation-service/BusinessService"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

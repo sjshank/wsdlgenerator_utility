@@ -16,6 +16,7 @@ var log = log4js.getLogger("app");
 */
 	app.use(express.static('client/'));
 	app.use(express.static('node_modules'));
+	app.use(express.static('bower_components'));
 	
 	app.use(bodyParser.json());
 	app.use(bodyParser.urlencoded({ extended: false }));

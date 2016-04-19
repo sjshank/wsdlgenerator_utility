@@ -1,38 +1,38 @@
 <div>
     <div class="float-left margin-left-10perc">
-        <input type="button" ng-click="addRequestElement(wsdl)" id="requestEle" ng-disabled="wsdl.disableReqEle" value="Add Request Element"
+        <input type="button" ng-click="addRequestElement(wsdl)" id="requestEle" ng-disabled="!wsdl.disableReqEle" value="Add Request Element"
         class="btn btn-primary button-cls">
     </div>
     <div class="float-left margin-left-10perc">
-        <input type="button" ng-click="addResponseElement(wsdl)" id="responseEle" ng-disabled="wsdl.disableResEle" value="Add Response Element"
+        <input type="button" ng-click="addResponseElement(wsdl)" id="responseEle" ng-disabled="!wsdl.disableResEle" value="Add Response Element"
         class="btn btn-primary button-cls">
     </div>
     <div class="clear-both"></div>
 
     <br>
     <div class="float-left margin-left-10perc">
-        <input type="button" id="requestEle" ng-click="addRequestMessage(wsdl)" ng-disabled="wsdl.disableReqMsg" value="Add Request Message"
+        <input type="button" id="requestEle" ng-click="addRequestMessage(wsdl)" ng-disabled="!wsdl.disableReqMsg" value="Add Request Message"
         class="btn btn-primary button-cls">
     </div>
     <div class="float-left margin-left-10perc">
-        <input type="button" id="responseEle" ng-click="addResponseMessage(wsdl)" ng-disabled="wsdl.disableResMsg" value="Add Response Message"
+        <input type="button" id="responseEle" ng-click="addResponseMessage(wsdl)" ng-disabled="!wsdl.disableResMsg" value="Add Response Message"
         class="btn btn-primary button-cls">
     </div>
     <div class="clear-both"></div>
     
     <br>
     <div class="float-left margin-left-10perc">
-        <input type="button" id="operation" ng-click="addOperation(wsdl)" ng-disabled="wsdl.disableOperatn" value="Add Operation"
+        <input type="button" id="operation" ng-click="addOperation(wsdl)" ng-disabled="!wsdl.disableOperatn" value="Add Operation"
         class="btn btn-primary button-cls">
     </div>
     <div class="float-left margin-left-10perc">
-        <input type="button" id="soapAddr" ng-click="addSoapAddress(wsdl)" ng-disabled="wsdl.disableSoapAddr" value="Add SOAP Address"
+        <input type="button" id="soapAddr" ng-click="addSoapAddress(wsdl)" ng-disabled="!wsdl.disableSoapAddr" value="Add SOAP Address"
         class="btn btn-primary button-cls">
     </div>
     <div class="clear-both"></div>
 
     <br>
     <div class="textalign-center">
-        <input type="submit" style="margin-right: 5px;" ng-disabled="wsdl.disableGenerate" id="generate" value="Generate" class="btn btn-primary">
+        <input type="submit" style="margin-right: 5px;" ng-disabled="!wsdl.disableGenerate" id="generate" value="Generate" class="btn btn-primary">
     </div>
 </div>

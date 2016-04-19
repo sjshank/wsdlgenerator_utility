@@ -10,7 +10,7 @@ angular.module('wsdlApp')
                 try {
                     wsdl.errorExist = false;
                     wsdlDataService.setWsdlRequest(wsdl.wsdlObject);
-                    wsdl.disableSoapAddr = false;
+                    wsdl.disableSoapAddr = true;
                     ngDialog.close();
                 } catch (err) {
                     $log.error('Error while adding method Object and closing window ', err);

@@ -6,7 +6,7 @@ angular.module('wsdlApp')
     .controller('requestElementCtrl', ['$scope', '$log', 'ngDialog', 'wsdlDataService', 'wsdl', 'appConstants',
         function($scope, $log, ngDialog, wsdlDataService, wsdl, appConstants) {
             wsdl.errorExist = false;
-            
+            $scope.isReadonly = 'hello';
             //Function for adding new elements inside requestElements array
             $scope.addElement = function(currentReqElement) {
                 try {
@@ -60,15 +60,16 @@ angular.module('wsdlApp')
                     wsdlDataService.setWsdlRequest(wsdl.wsdlObject);
                     if (wsdlDataService.getRequestEleLength() >= 1) {
                         if (wsdl.wsdlObject.requestElements[0]['name'] !== '') {
-                            wsdl.disableResEle = false;
-                            wsdl.showReqEle = false;
-                        } else {
                             wsdl.disableResEle = true;
+                            wsdl.showReqEle = false;
+                            
+                        } else {
+                            wsdl.disableResEle = false;
                         }
                     } else {
-                        wsdl.disableResEle = true;
+                        wsdl.disableResEle = false;
                     }
-                    ngDialog.close();
+                    
                 } catch (err) {
                     $log.error('Error while adding Request Element Object and closing window ', err);
                     wsdl.errorExist = true;

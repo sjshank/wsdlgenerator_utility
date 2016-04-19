@@ -10,13 +10,13 @@ angular.module('wsdlApp')
             var wsdl = this;
             wsdl.hasError = false;
             wsdl.dataTypes = appConstants.DATA_TYPES;
-            wsdl.disableReqEle = true;
-            wsdl.disableResEle = true;
-            wsdl.disableReqMsg = true;
-            wsdl.disableResMsg = true;
-            wsdl.disableSoapAddr = true;
-            wsdl.disableOperatn = true;
-            wsdl.disableGenerate = true;
+            wsdl.disableReqEle = false;
+            wsdl.disableResEle = false;
+            wsdl.disableReqMsg = false;
+            wsdl.disableResMsg = false;
+            wsdl.disableSoapAddr = false;
+            wsdl.disableOperatn = false;
+            wsdl.disableGenerate = false;
             wsdl.showDialog = false;
             wsdl.showReqEle = false;
             wsdl.showResEle = false;
@@ -26,13 +26,7 @@ angular.module('wsdlApp')
             wsdl.showSoapAddr = false;
 
             var options = {
-                className: 'ngdialog-theme-default',
-                scope: $scope,
-                overlay: true,
-                closeByNavigation: true,
-                preCloseCallback: function(value) {
-                    
-                 }
+                scope: $scope
             }
 
             //Initialize wsdl request object
@@ -48,9 +42,9 @@ angular.module('wsdlApp')
             $scope.$watch('wsdl.wsdlObject.targetNamespace', function(newValue, oldValue, scope) {
                 try {
                     if (typeof newValue !== 'undefined' && newValue !== "" && newValue !== oldValue) {
-                        wsdl.disableReqEle = false;
-                    } else {
                         wsdl.disableReqEle = true;
+                    } else {
+                        wsdl.disableReqEle = false;
                     }
                 } catch (err) {
                     $log.error('Error while watching targetNamespace scope object', err);
@@ -66,8 +60,10 @@ angular.module('wsdlApp')
                     options.template = 'requestElementDialog';
                     options.controller = $controller('requestElementCtrl', {
                         $scope: $scope,
-                        wsdl: wsdl
+                        wsdl: wsdl,
+                        controllerAs : 'elementCtrl'
                     });
+                    
                     ngDialog.open(options);
                 } catch (err) {
                     $log.error('Error while rendering request element window ', err);

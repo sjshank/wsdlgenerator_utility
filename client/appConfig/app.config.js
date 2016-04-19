@@ -25,6 +25,7 @@ angular
         DATA_TYPES: ['String', 'Integer', 'Boolean'],
         FILE_NAME: 'SOAP_WSDL.wsdl'
     })
+    
     .run(['$rootScope', '$templateCache',  function(rootScope, $templateCache) {
         rootScope.subHeading = "A MEAN Stack based web portal to generate draft version of SOAP-WSDL. Grab WSDL and save in your pocket.";
         rootScope.SERVICE_NAME_ERR = "Please enter a valid service name.";

@@ -10,19 +10,21 @@
         <br>
         <div ng-repeat="message in wsdl.wsdlObject.requestMessages">
             <div class="form-control form-input-div" ng-class="{ 'hasError' : messageForm.{{message.id}}.$invalid && !messageForm.{{message.id}}.$pristine }">
-                <label class="form-input-text" >Request Message Name</label>
+                <label class="form-input-text" style="width: 44%;">Request Message Name</label>
                 <input type="text" class="form-input-box form-control" name="{{message.id}}" ng-model="message.messageName" id="{{message.id}}"
-                placeholder="Enter Name" ngvalidate-Character >
+                placeholder="Enter Name" ngvalidate-Character 
+                ng-readonly="wsdl.disableResMsg">
             </div>
             <small class="errorTxt" ng-show="messageForm.{{message.id}}.$dirty && messageForm.{{message.id}}.$error.ngvalidateCharacter">{{::REQ_MSG_NAME_ERR }}</small>
             <br><br>
             <div class="form-control form-input-div">
                 <label class="form-input-text" >Map to Request Element</label>
-                <select class="float-left form-control form-input-box" ng-model="message.requestElement.name" ng-options="v as v.name for v in wsdl.wsdlObject.requestElements" required></select>
+                <input type="text" ng-if="wsdl.disableResMsg" class="float-left form-input-box form-control" ng-readonly="wsdl.disableResMsg" ng-model="message.requestElement.name.name">
+                <select class="float-left form-control form-input-box" ng-if="!wsdl.disableResMsg" ng-model="message.requestElement.name" ng-options="v as v.name for v in wsdl.wsdlObject.requestElements" required></select>
             </div>
             <br>
          </div>
          <br>
-        <input type="submit" ng-click="add()" ng-disabled="messageForm.$invalid"  ng-hide="wsdl.wsdlObject.requestMessage.length < 1" class="btn btn-primary" value="Add" id="add">
+        <input type="submit" ng-click="add()" ng-if="!wsdl.disableResMsg" ng-disabled="messageForm.$invalid"  ng-hide="wsdl.wsdlObject.requestMessage.length < 1" class="btn btn-primary" value="Add" id="add">
     </form>
 </div>

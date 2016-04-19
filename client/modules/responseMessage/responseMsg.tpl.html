@@ -12,17 +12,19 @@
             <div class="form-control form-input-div" ng-class="{ 'hasError' : messageForm.{{message.id}}.$invalid && !messageForm.{{message.id}}.$pristine }">
                 <label class="form-input-text" >Response Message Name</label>
                 <input type="text" class="form-input-box form-control" name="{{message.id}}" ng-model="message.messageName" id="{{message.id}}"
-                placeholder="Enter Name" ngvalidate-Alphanumeric >
+                placeholder="Enter Name" ngvalidate-Alphanumeric 
+                ng-readonly="wsdl.disableOperatn">
             </div>
             <small class="errorTxt" ng-show="messageForm.{{message.id}}.$dirty && messageForm.{{message.id}}.$error.ngvalidateAlphanumeric">{{::RES_MSG_NAME_ERR }}</small>
             <br><br>
             <div class="form-control form-input-div">
-                <label class="form-input-text" >Map to Request Element</label>
-                <select class="float-left form-control form-input-box" ng-model="message.responseElement.name" ng-options="v as v.name for v in wsdl.wsdlObject.responseElements" required></select>
+                <label style="width: 46%;" class="form-input-text" >Map to Request Element</label>
+                <input type="text" ng-if="wsdl.disableOperatn" class="float-left form-control form-input-box" ng-readonly="wsdl.disableOperatn" ng-model="message.responseElement.name.name">
+                <select class="float-left form-control form-input-box" ng-if="!wsdl.disableOperatn" ng-model="message.responseElement.name" ng-options="v as v.name for v in wsdl.wsdlObject.responseElements" required></select>
             </div>
             <br>
          </div>
          <br>
-        <input type="submit" ng-click="add()" ng-disabled="messageForm.$invalid"  ng-hide="wsdl.wsdlObject.responseMessages.length < 1" class="btn btn-primary" value="Add" id="add">
+        <input type="submit" ng-click="add()" ng-if="!wsdl.disableOperatn" ng-disabled="messageForm.$invalid"  ng-hide="wsdl.wsdlObject.responseMessages.length < 1" class="btn btn-primary" value="Add" id="add">
     </form>
 </div>
