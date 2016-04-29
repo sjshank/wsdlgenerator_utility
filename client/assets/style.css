@@ -153,3 +153,9 @@ h1 {
   height: 30%;
   margin: auto;
 }
+.warning-div {
+  font-size: 13px;
+  font-weight: 600;
+  color: #610c1c;
+  font-family: inherit;
+}

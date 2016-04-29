@@ -54,7 +54,7 @@ angular.module('wsdlApp')
             };
             
             //Function for adding Response Element 
-            $scope.add = function() {
+            $scope.add = function(wsdl) {
                 try {
                     wsdl.errorExist = false;
                     wsdlDataService.setWsdlRequest(wsdl.wsdlObject);

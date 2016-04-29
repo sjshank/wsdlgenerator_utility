@@ -41,6 +41,9 @@
            
          </div>
          
-        <input type="submit" ng-click="add()" ng-if='!wsdl.disableGenerate' ng-disabled="soapForm.$invalid"  class="btn btn-primary" value="Add" id="add">
+        <input type="submit" ng-click="add(wsdl)" ng-if='!wsdl.disableGenerate' ng-disabled="soapForm.$invalid"  class="btn btn-primary" value="Add" id="add">
+        <div ng-if='!wsdl.disableGenerate' class="warning-div">
+            <span ><sup>*</sup>Once you have added, no further changes will be allow.</span>
+        </div>        
     </form>
 </div>

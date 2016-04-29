@@ -44,7 +44,10 @@
             </div>
             <br>
         </div>
-        <input type="submit" ng-if="!wsdl.disableResEle" ng-click="add()" ng-disabled="elementForm.$invalid" ng-hide="wsdl.wsdlObject.requestElements.length < 1"
+        <input type="submit" ng-if="!wsdl.disableResEle" ng-click="add(wsdl)" ng-disabled="elementForm.$invalid" ng-hide="wsdl.wsdlObject.requestElements.length < 1"
         class="btn btn-primary" value="Add" id="add">
+        <div ng-if="!wsdl.disableResEle" class="warning-div">
+            <span ><sup>*</sup>Once you have added, no further changes will be allow.</span>
+        </div>
     </form>
 </div>

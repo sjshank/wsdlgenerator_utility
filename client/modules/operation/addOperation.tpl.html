@@ -19,18 +19,21 @@
             <br><br>
             <div class="form-control form-input-div">
                 <label class="form-input-text" >Map to SOAP Request Message</label>
-                <input type="text" ng-if="wsdl.disableSoapAddr" class="float-left form-control data-type-options" ng-readonly="wsdl.disableSoapAddr" ng-model="operation.requestMessage.name">
+                <input type="text" style='border-radius: 0;' ng-if="wsdl.disableSoapAddr" class="float-left form-control" ng-readonly="wsdl.disableSoapAddr" ng-model="operation.requestMessage.messageName">
                 <select class="float-left form-control form-input-box" ng-if="!wsdl.disableSoapAddr" ng-model="operation.requestMessage" ng-options="v as v.messageName for v in wsdl.wsdlObject.requestMessages" required></select>
             </div>
             <br><br>
             <div class="form-control form-input-div">
                 <label class="form-input-text" >Map to SOAP Response Message</label>
-                <input type="text" ng-if="wsdl.disableSoapAddr" class="float-left form-control data-type-options" ng-readonly="wsdl.disableSoapAddr" ng-model="operation.responseMessage.name">
+                <input type="text" style='border-radius: 0;' ng-if="wsdl.disableSoapAddr" class="float-left form-control " ng-readonly="wsdl.disableSoapAddr" ng-model="operation.responseMessage.messageName">
                 <select class="float-left form-control form-input-box" ng-if="!wsdl.disableSoapAddr" ng-model="operation.responseMessage" ng-options="v as v.messageName for v in wsdl.wsdlObject.responseMessages" required></select>
             </div>
             <br>
          </div>
          
-        <input type="submit" ng-click="add()" ng-if="!wsdl.disableSoapAddr" ng-disabled="operationForm.$invalid"  class="btn btn-primary" value="Add" id="add">
+        <input type="submit" ng-click="add(wsdl)" ng-if="!wsdl.disableSoapAddr" ng-disabled="operationForm.$invalid"  class="btn btn-primary" value="Add" id="add">
+        <div ng-if="!wsdl.disableSoapAddr" class="warning-div">
+            <span ><sup>*</sup>Once you have added, no further changes will be allow.</span>
+        </div>        
     </form>
 </div>

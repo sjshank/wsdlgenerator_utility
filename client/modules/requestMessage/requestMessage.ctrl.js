@@ -8,7 +8,7 @@ angular.module('wsdlApp')
             wsdl.errorExist = false;
             
             //Function for adding SOAP request message
-            $scope.add = function() {
+            $scope.add = function(wsdl) {
                 //TO-DO
                 try {
                     wsdl.errorExist = false;

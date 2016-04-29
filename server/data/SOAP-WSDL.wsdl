@@ -5,35 +5,35 @@
       <xsd:element name="RequestElementName">
         <xsd:complexType>
           <xsd:sequence>
-            <xsd:element name="Input" type="xsd:String"/>
+            <xsd:element name="variable2" type="xsd:String"/>
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
-      <xsd:element name="responseElementName">
+      <xsd:element name="res">
         <xsd:complexType>
           <xsd:sequence>
-            <xsd:element name="output" type="xsd:String"/>
+            <xsd:element name="out" type="xsd:String"/>
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="reqMessage">
+  <wsdl:message name="sumRequest">
     <wsdl:part element="tns:RequestElementName" name="parameters"/>
   </wsdl:message>
-  <wsdl:message name="resMsg">
-    <wsdl:part element="tns:responseElementName" name="parameters"/>
+  <wsdl:message name="resmsg">
+    <wsdl:part element="tns:res" name="parameters"/>
   </wsdl:message>
   <wsdl:portType name="BusinessService">
-    <wsdl:operation name="doSum">
-      <wsdl:input name="tns:reqMessage"/>
-      <wsdl:output name="tns:resMsg"/>
+    <wsdl:operation name="method1">
+      <wsdl:input name="tns:sumRequest"/>
+      <wsdl:output name="tns:resmsg"/>
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BusinessServiceSOAP" type="tns:BusinessService">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-    <wsdl:operation name="doSum">
-      <soap:operation soapAction="http://service.lfg.com/BusinessService/doSum"/>
+    <wsdl:operation name="method1">
+      <soap:operation soapAction="http://service.lfg.com/BusinessService/method1"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>

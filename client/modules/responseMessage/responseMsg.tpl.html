@@ -25,6 +25,9 @@
             <br>
          </div>
          <br>
-        <input type="submit" ng-click="add()" ng-if="!wsdl.disableOperatn" ng-disabled="messageForm.$invalid"  ng-hide="wsdl.wsdlObject.responseMessages.length < 1" class="btn btn-primary" value="Add" id="add">
+        <input type="submit" ng-click="add(wsdl)" ng-if="!wsdl.disableOperatn" ng-disabled="messageForm.$invalid"  ng-hide="wsdl.wsdlObject.responseMessages.length < 1" class="btn btn-primary" value="Add" id="add">
+        <div ng-if="!wsdl.disableOperatn" class="warning-div">
+            <span ><sup>*</sup>Once you have added, no further changes will be allow.</span>
+        </div>        
     </form>
 </div>

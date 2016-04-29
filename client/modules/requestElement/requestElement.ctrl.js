@@ -54,7 +54,8 @@ angular.module('wsdlApp')
             };
             
             //Function for adding requestElements inside WSDL Request
-            $scope.add = function() {
+            $scope.add = function(wsdl) {
+
                 try {
                     wsdl.errorExist = true;
                     wsdlDataService.setWsdlRequest(wsdl.wsdlObject);
@@ -69,7 +70,7 @@ angular.module('wsdlApp')
                     } else {
                         wsdl.disableResEle = false;
                     }
-                    
+                    ngDialog.close();
                 } catch (err) {
                     $log.error('Error while adding Request Element Object and closing window ', err);
                     wsdl.errorExist = true;

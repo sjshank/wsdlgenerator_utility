@@ -43,6 +43,9 @@
              </div>
              <br>
         </div>
-        <input type="submit" ng-click="add()" ng-if="!wsdl.disableReqMsg" ng-disabled="elementForm.$invalid"  ng-hide="wsdl.wsdlObject.responseElements.length < 1" class="btn btn-primary" value="Add" id="add">
+        <input type="submit" ng-click="add(wsdl)" ng-if="!wsdl.disableReqMsg" ng-disabled="elementForm.$invalid"  ng-hide="wsdl.wsdlObject.responseElements.length < 1" class="btn btn-primary" value="Add" id="add">
+        <div  ng-if="!wsdl.disableReqMsg" class="warning-div">
+            <span ><sup>*</sup>Once you have added, no further changes will be allow.</span>
+        </div>        
     </form>
 </div>

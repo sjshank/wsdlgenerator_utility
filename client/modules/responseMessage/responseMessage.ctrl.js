@@ -6,7 +6,7 @@ angular.module('wsdlApp')
     .controller('responseMessageCtrl', ['$scope', '$log', '$rootScope', 'ngDialog', 'wsdlDataService', 'wsdl', 'appConstants',
         function($scope, $log, $rootScope, ngDialog, wsdlDataService, wsdl, appConstants) {
             wsdl.errorExist = false;
-            $scope.add = function() {
+            $scope.add = function(wsdl) {
                 try {
                     wsdl.errorExist = false;
                     wsdlDataService.setWsdlRequest(wsdl.wsdlObject);
